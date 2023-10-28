@@ -160,7 +160,7 @@
 						<td><%=h.getLocation()%></td>
 						<td><%=h.getContact_info()%></td>
 						<td>
-                        <a href="EditHotel.jsp?Hotel_id=<%=h.getHotel_id()%>">
+                        <a href="pages/EditHotel.jsp?Hotel_id=<%=h.getHotel_id()%>">
                           <button class="btn A">Edit</button>
                         </a> 
                         <a href="deleteh?Hotel_id=<%=h.getHotel_id()%>">
