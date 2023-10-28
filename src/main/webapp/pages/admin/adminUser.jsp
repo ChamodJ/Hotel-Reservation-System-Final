@@ -142,7 +142,7 @@
                         <td><%=	r.getRole() %></td>
                         
 
-                        <td> <a href="#">
+                        <td> <a href="deleteu?User_id=<%=r.getUser_ID()%>">
                                 <button class="btn A D">Delete</button>
                         </a></td>
                     </tr>

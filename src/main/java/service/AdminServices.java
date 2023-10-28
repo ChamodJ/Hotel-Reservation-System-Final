@@ -15,6 +15,8 @@ import util.ErrorLogger;
 
 public class AdminServices {
 	
+
+
 public List<Booking> getReservations() throws ClassNotFoundException, SQLException  {
 		
 		
@@ -145,6 +147,26 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 		}
 
 		return user;
+	}
+	public boolean deleteuser(int User_ID) {
+		boolean f = false;
+		
+		try {
+			Connection con = DBConnectionUtil.getDBConnection();
+			String sql = "delete from users where User_ID=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, User_ID);
+
+			int i = ps.executeUpdate();
+
+			if (i == 1) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
 	}
 
 }
