@@ -113,8 +113,10 @@
                         <th>Reservation ID</th>
                         <th>User ID</th>
                         <th>Hotel ID</th>
+                        <th>Room ID</th>
                         <th>Check In Date</th>
                         <th>Check Out Date</th>
+                        <th>Reservation Date</th>
                         <th>No Of Gusts</th>
                         <th>Amount</th>
                         <th>Action</th>
@@ -133,8 +135,10 @@
                         <td><%=	r.getReservaton_id() %></td>
                         <td><%= r.getUser_id() %></td>
                         <td><%= r.getHotel_id() %></td>
+                        <td><%= r.getRoom_id() %></td>
                         <td><%= r.getCheck_in_date() %></td>
                         <td><%= r.getCheck_out_date() %></td>
+                        <td><%= r.getReservation_date() %></td>
                         <td><%= r.getNo_of_Gusts()    %></td>
                         <td><%= r.getAmount() %></td>
 

@@ -12,7 +12,7 @@ import util.DBConnectionUtil;
 
 public class AdminServices {
 	
-public List<Booking> getReservations() throws ClassNotFoundException, SQLException {
+public List<Booking> getReservations() throws ClassNotFoundException, SQLException  {
 		
 		Booking r = new Booking();
 		Connection con = DBConnectionUtil.getDBConnection();
@@ -28,10 +28,12 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 				r.setReservaton_id(rs.getInt(1));
 				r.setUser_id(rs.getInt(2));
 				r.setHotel_id(rs.getInt(3));
-				r.setCheck_in_date(rs.getDate(4));
-				r.setCheck_out_date(rs.getDate(5));
-				r.setNo_of_Gusts(rs.getInt(6));
-				r.setAmount(rs.getFloat(7));
+				r.setRoom_id(rs.getString(4));
+				r.setCheck_in_date(rs.getDate(5));
+				r.setCheck_out_date(rs.getDate(6));
+				r.setReservation_date(rs.getDate(7));
+				r.setNo_of_Gusts(rs.getInt(8));
+				r.setAmount(rs.getFloat(9));
 				
 				res.add(r);
 			}

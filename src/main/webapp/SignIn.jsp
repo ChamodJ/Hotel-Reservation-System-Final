@@ -23,7 +23,7 @@
         <div class="signup-form" >
           <h1>Sign-In</h1>
 
-          <form action="/OHRS/SignIn" method="post">
+          <form action="SignIn" method="post">
 
             <div class="data-field">
               <input name="email" name="email" type="email" placeholder="Enter E-mail">
