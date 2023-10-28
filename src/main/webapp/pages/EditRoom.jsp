@@ -116,7 +116,7 @@
 	<div class="content ">
 		<div class="addHotel">
 			<div class="form-box">
-				<form class="form" action="updateroom" method="post">
+				<form class="form" action="updaterooms" method="post">
 					<span class="title">Edit Room</span>
 
 					<div class="form-container">
