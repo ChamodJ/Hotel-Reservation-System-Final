@@ -16,6 +16,8 @@ public class ErrorLogger {
 		FileHandler fh;
 		
 		try {
+			
+			//Location to create Error Logger file
 			fh = new FileHandler("G:/Final/ErrorLogger/logfile.log");
 			
 			log.addHandler(fh);
@@ -34,6 +36,9 @@ public class ErrorLogger {
 		}
 	}
 	
+	/*
+	  
+	 //test case
 	public static void main(String[] args) {
 	    getLogger(); // Initialize the logger
 	    
@@ -43,7 +48,7 @@ public class ErrorLogger {
 	    } catch (IOException e) {
 	        log.log(Level.SEVERE, "IO Exception occurred", e);
 	    }
-	}
+	}*/
 
 	
 }
