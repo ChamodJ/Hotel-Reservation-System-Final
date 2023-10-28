@@ -12,7 +12,7 @@
     </head>
 
     <body class="page overflow bg-img contact-bg">
-              <header>
+     <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">
         <a class="links" href="../../Home.jsp">Home</a>
