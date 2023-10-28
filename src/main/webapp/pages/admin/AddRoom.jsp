@@ -111,7 +111,7 @@
 		<div class="addHotel">
 
 			<div class="form-box">
-				<form class="form" action="registerroom" method="post" onsubmit="return AddRoomValidation()">
+				<form class="form" action="addroom" method="post" onsubmit="return AddRoomValidation()">
 					<span class="title">Add Room</span> <span class="subtitle">Add
 						room to a database.</span>
 					<div class="form-container">

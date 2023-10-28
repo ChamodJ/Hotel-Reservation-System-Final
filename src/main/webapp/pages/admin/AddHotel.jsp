@@ -122,7 +122,7 @@
 			</c:if>-->
 
 			<div class="form-box">
-				<form onsubmit="return AddHotelValidation();" class="form" action="registerhotel" method="post">
+				<form onsubmit="return AddHotelValidation();" class="form" action="addhotel" method="post">
 					<span class="title">Add Hotel</span> <span class="subtitle">Add
 						hotel to a database.</span>
 					<div class="form-container">

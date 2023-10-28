@@ -16,7 +16,7 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class AddRoomServlet
  */
-@WebServlet("/registerroom")
+@WebServlet("/pages/admin/addroom")
 public class AddRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

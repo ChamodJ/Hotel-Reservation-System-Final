@@ -17,7 +17,7 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class AddHotelServlet
  */
-@WebServlet("/registerhotel")
+@WebServlet("/pages/admin/addhotel")
 public class AddHotelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,7 +46,7 @@ public class AddHotelServlet extends HttpServlet {
 		int Hotel_id = Integer.parseInt(request.getParameter("Hotel_id"));
 		String Location = request.getParameter("Location");
 		String Contact_info = request.getParameter("Contact_info");
-
+System.out.println("Doen");
 		// Creating a Hotel object with the form data
 		Hotel hotel = new Hotel(Hotel_id, Location, Contact_info);
 
