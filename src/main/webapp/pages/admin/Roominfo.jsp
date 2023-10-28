@@ -147,7 +147,7 @@
 						<td><%=r.getReserved_room()%></td>
 
                         <td>
-	                        <a href="EditRoom.jsp?Room_Id=<%=r.getRoom_id()%>">
+	                        <a href="./pages/EditRoom.jsp?Room_Id=<%=r.getRoom_id()%>">
 	                                <button class="btn A">Edit</button>
 	                        </a> 
 	                        <a href="deleter?Room_Id=<%=r.getRoom_id()%>">
