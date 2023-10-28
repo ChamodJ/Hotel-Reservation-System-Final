@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class UpdateHotelServlet
  */
-@WebServlet("/UpdateHotelServlet")
+@WebServlet("/pages/admin/updatehotel")
 public class UpdateHotelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

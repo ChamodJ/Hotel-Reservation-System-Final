@@ -115,8 +115,8 @@ public class HotelServiceImplementation implements HotelServices {
 				while (rs.next()) {
 					h = new Hotel();
 					h.setHotel_id(rs.getInt(1));
-					h.setLocation(rs.getString(2));
-					h.setContact_info(rs.getString(3));
+					h.setLocation(rs.getString(3));
+					h.setContact_info(rs.getString(4));
 
 				}
 			} catch (Exception e) {
