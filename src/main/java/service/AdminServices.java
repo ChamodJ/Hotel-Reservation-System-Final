@@ -6,15 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 import model.Booking;
+import model.User;
 import util.DBConnectionUtil;
+import util.ErrorLogger;
 
 public class AdminServices {
 	
 public List<Booking> getReservations() throws ClassNotFoundException, SQLException  {
 		
-		Booking r = new Booking();
+		
 		Connection con = DBConnectionUtil.getDBConnection();
 		String sql = "select * from reservaton where check_in_date >= curdate();";
 		
@@ -25,6 +28,7 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {
+				Booking r = new Booking();
 				r.setReservaton_id(rs.getInt(1));
 				r.setUser_id(rs.getInt(2));
 				r.setHotel_id(rs.getInt(3));
@@ -102,6 +106,45 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 		}
 		return ucount;
 		
+	}
+	
+	public List<User> getAllUsers() throws ClassNotFoundException, SQLException {
+
+		
+		Connection con = DBConnectionUtil.getDBConnection();
+		String sql = "select * from users ";
+
+		List<User> user = new ArrayList<User>();
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				User u = new User();
+				u.setUser_ID(rs.getInt(1));
+				u.setUsername(rs.getString(2));
+				u.setEmail(rs.getString(5));
+				u.setAddress(rs.getString(6));
+				u.setMobile_No(rs.getString(7));
+				u.setDate_of_birth(rs.getDate(8));
+				u.setPassword(rs.getString(11));
+				u.setRole(rs.getString(12));
+
+				user.add(u);
+			}
+
+		} catch (SQLException e) {
+			ErrorLogger.log.log(Level.SEVERE , "SQL Exception :: " , e);
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				ErrorLogger.log.log(Level.SEVERE , "SQL Exception :: " , e);
+			}
+		}
+
+		return user;
 	}
 
 }
