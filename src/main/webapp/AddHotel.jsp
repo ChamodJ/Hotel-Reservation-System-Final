@@ -6,10 +6,7 @@
 <head>
 
 <style>
-.addHotel {
-	display: flex;
-	justify-content: center;
-}
+
 
 .form-box {
 	width: 400px;
