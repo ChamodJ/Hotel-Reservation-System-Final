@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/SignOutServlet")
+@WebServlet("/pages/admin/SignOutServlet")
 public class SignOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class SignOutServlet extends HttpServlet {
     		session.invalidate();
         }
         try {
-			response.sendRedirect("Home.jsp");
+			response.sendRedirect("../../Home.jsp");
 		} catch (IOException e) {
 			
 			e.printStackTrace();
