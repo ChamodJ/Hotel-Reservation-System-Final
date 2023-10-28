@@ -1,0 +1,245 @@
+@charset "ISO-8859-1";
+
+@charset "ISO-8859-1";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: mintcream;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+header {
+    background-color: #007BFF; /* Sea blue background color */
+    color: white;
+    list-style: none;
+    padding: 20px;
+}
+
+/* Style the navigation bar */
+.mainnav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+.mainnav ul li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+.mainnav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px; /* Add rounded corners */
+    margin: 0 10px; /* Add space between items */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    font-size: 18px;
+}
+
+/* Highlight on hover */
+.mainnav ul li a:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+/* Underline the active item */
+.mainnav ul li a.active {
+    text-decoration: underline; /* Underline the active item's text */
+    color: #007BFF;
+}
+
+/* Center-align navigation items */
+.mainnav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), url("https://yellowzebrasafaris.com/media/46255/best-beach-hotels-in-zanzibar-tanzania.jpg?center=0.715,0.53833333333333333&mode=crop&width=1920&height=960&format=webp&quality=70&rnd=132642685670000000");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+
+
+/* The side navigation menu */
+.sidebar {
+ 
+  margin: 10px;
+  padding: 0;
+  width: 300px;
+  background-color: papayawhip;
+  position: absolute;
+  height: 200px;
+  overflow: auto;
+  text-align: left;
+	
+}
+.sidebar li{
+	list-style: none;
+	text-align: left;
+	
+}
+
+/* Sidebar links */
+.sidebar a {
+
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s; 
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #555; /* Change the background color when active */
+    color: #fff; /* Change the text color when active */
+    font-weight: bold; /* Make the text bold when active */
+}
+.sidebar a.active:hover {
+    background-color: #555; /* Change the background color on hover when active */
+    color: #fff; /* Change the text color on hover when active */
+}
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+	list-style: none;
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+	list-style: none;
+  margin-left: 300px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* Form container */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Form fields */
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+/* Button */
+.form-container button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #1c87c9;
+}
+
+/* Form validation message */
+.validation-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.userprofile {
+  background-image: url('tropical-background.jpg');
+  background-size: cover;
+  background-color: #fff;
+  padding: 20px;
+  color: #333;
+}
+
+.userprofile h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #ff6600;
+}
+
+.userprofile p {
+  font-size: 18px;
+}
+
+
+.userprofile {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ff6600;
+  border-radius: 10px;
+}
+
+
+.userprofile p::before {
+  content: url('palm-tree-icon.png');
+  margin-right: 10px;
+}
+
+
+.userprofile p {
+  margin: 10px 0;
+}
+
+
+.userprofile p:hover {
+  background-color: #ffcc99;
+  color: #333;
+  transition: 0.3s;
+}
+
+
+.container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image {
+            flex: 1;
+            background: url('https://i.pinimg.com/originals/2c/08/a3/2c08a3484f66c5bbfa0bcf439c7ebcc5.gif') center/cover no-repeat; /* Replace 'your-image.jpg' with your image URL */
+            height: 350px; /* Adjust the height as needed */
+        }
+
+        .details {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0; /* Adjust the background color as needed */
+        }

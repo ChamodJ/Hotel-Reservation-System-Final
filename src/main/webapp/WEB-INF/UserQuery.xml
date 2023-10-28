@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+   
+<UserQueries>
+	<!-- Select all customer orders Query -->
+	<query id="insert_user">
+        <![CDATA[
+          	insert into users (User_id, Username, Email, Address, Mobile_no, password,  role) 
+          	values (?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular employee by id Query -->
+	<query id="Full_user_by_email">
+         <![CDATA[        
+            select * from users where Email = ?
+        ]]>
+	</query>
+	
+	<query id="user_by_email">
+         <![CDATA[        
+            select * from users where Email = ?
+        ]]>
+	</query>
+
+	<!-- Select all employees -->
+	<query id="all_users">
+         <![CDATA[        
+            select * from users
+        ]]>
+	</query>
+
+	<!-- Delete a particular employee by id Query -->
+	<query id="delete_user">
+         <![CDATA[        
+            delete from users where User_id = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular employee by id Query -->
+	<query id="update_user">
+         <![CDATA[        
+            update users  
+            set Username = ?, First_Name =?, Last_Name =?, Email = ?, Address = ?, Mobile_no = ?, Date_of_Birth =?, Nationality =?, Gender =?, password = ?,  role = ?
+            where User_id= ?
+        ]]>
+	</query>
+	
+		<!-- Get employee IDs Query -->
+	<query id="user_ids">
+         <![CDATA[        
+            select User_id from users 
+        ]]>
+	</query>
+	
+	<query id="update_password">
+   <![CDATA[        
+       update users  
+       set  password = ?
+       where User_id = ?
+   ]]>
+</query>
+	
+	<query id="authenticate_user">
+         <![CDATA[        
+           
+            SELECT password FROM users WHERE Email = ?
+        ]]>
+	</query>
+	
+	<query id="insert_booking">
+        <![CDATA[
+          	insert into Reservaton (User_id, Hotel_id, Room_id, check_in_date, check_out_date, reservation_date, No_of_Gusts,Amount) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+	
+	<query id="select_all_bookings_of_user">
+         <![CDATA[        
+            select * from Reservaton where User_id = ?
+        ]]>
+	</query>
+	
+	<query id="select_booking">
+         <![CDATA[        
+            select * from Reservaton where Reservaton_id = ?
+        ]]>
+	</query>
+	
+	<query id="select_all_current_booking_of_user">
+         <![CDATA[        
+            SELECT b.Reservaton_id, b.reservation_date, h.Hotel_name,r.Type, b.check_in_date, b.check_out_date, b.No_of_Gusts, b.Amount
+            FROM Reservaton AS b
+            JOIN Hotel AS h ON b.Hotel_id = h.Hotel_id
+            JOIN room AS r ON b.Room_id = r.Room_id
+            WHERE b.User_id = ? AND b.check_out_date >= CURRENT_DATE;
+        ]]>
+	</query>
+	
+	<query id="select_all_past_booking_of_user">
+         <![CDATA[        
+            SELECT b.Reservaton_id, b.reservation_date, h.Hotel_name,r.Type, b.check_in_date, b.check_out_date, b.No_of_Gusts, b.Amount
+            FROM Reservaton AS b
+            JOIN Hotel AS h ON b.Hotel_id = h.Hotel_id
+            JOIN room AS r ON b.Room_id = r.Room_id
+            WHERE b.User_id = ? AND b.check_out_date < CURRENT_DATE;
+        ]]>
+	</query>
+	
+	
+	<query id="update_booking">
+         <![CDATA[        
+            update Reservaton  
+            set User_id = ?,  Hotel_id =?, Room_id =?, check_in_date = ?, check_out_date = ?, reservation_date = ?, No_of_Gusts =?, Amount =?
+            where Reservaton_id= ?
+        ]]>
+	</query>
+	
+	<query id="delete_booking">
+         <![CDATA[        
+            delete from Reservaton  where Reservaton_id = ?
+        ]]>
+	</query>
+	
+	<query id="select_hotel">
+         <![CDATA[        
+            select * from Hotel where Hotel_id = ?
+        ]]>
+	</query>
+	
+	<query id="select_room">
+         <![CDATA[        
+            select * from Room where Room_id = ?
+        ]]>
+	</query>
+	
+	<query id="select_hotel_by_name">
+         <![CDATA[        
+            select * from Hotel where Hotel_name = ?
+        ]]>
+	</query>
+	
+	<query id="select_room_by_type">
+         <![CDATA[        
+            select * from Room where Type = ?
+        ]]>
+	</query>
+	
+
+</UserQueries>
