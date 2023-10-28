@@ -160,7 +160,7 @@
                     <h2>Total Reservations</h2>
                 </div>
                 <div>
-                    <a href="pages/AdminReservation.jsp"><button class="btn" type="button">Reservations</button></a>
+                    <a href="AdminReservation.jsp"><button class="btn" type="button">Reservations</button></a>
                 </div>
             </div>
 
