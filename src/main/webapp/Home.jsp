@@ -43,7 +43,7 @@
     
 
    
-      <div class ="welcome-bg">
+      <div>
         <div class="content page"> 
             <div class="welcome-div">
                 <h1 class="welcome-msg">WELCOME TO</h1>
