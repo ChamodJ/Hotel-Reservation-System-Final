@@ -97,7 +97,7 @@
 	--%>
 	
 
-	<%@ include file="../includes/navBar.jsp" %>
+	<%@ include file="navBar.jsp" %>
 
 	<div class="content ">
         
