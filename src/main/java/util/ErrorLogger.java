@@ -36,8 +36,8 @@ public class ErrorLogger {
 		}
 	}
 	
-	/*
-	  
+	
+	  /*
 	 //test case
 	public static void main(String[] args) {
 	    getLogger(); // Initialize the logger
@@ -46,9 +46,13 @@ public class ErrorLogger {
 	        // Attempt to open a non-existent file
 	        FileInputStream fileInputStream = new FileInputStream("non_existent_file.txt");
 	    } catch (IOException e) {
-	        log.log(Level.SEVERE, "IO Exception occurred", e);
+	        log.log(Level.SEVERE, "IO Exception occurred ::", e);
 	    }
+	    
+	    
 	}*/
+	
+	
 
 	
 }
