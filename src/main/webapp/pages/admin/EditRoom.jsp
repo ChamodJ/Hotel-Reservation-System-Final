@@ -100,11 +100,11 @@
 	background-color: #0044ab
 }
 </style>
-<link rel="stylesheet" href="Header.css">
+<link rel="stylesheet" href="../../styles/navBar.css">
 </head>
 <body >
 
-	<%@ include file="../includes/navBar.jsp"%>
+	<%@ include file="../../includes/navBar.jsp"%>
 
 	<%
 	String Room_Id = request.getParameter("Room_Id");

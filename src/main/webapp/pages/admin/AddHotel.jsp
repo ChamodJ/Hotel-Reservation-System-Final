@@ -100,12 +100,13 @@
 <meta charset="UTF-8">
 <title>Add Hotel</title>
 
-
+<link rel="stylesheet" href="../../styles/navBar.css">
 <script defer src="js/adminValidation.js"></script>
 </head>
+
 <body class="overflow">
 
-		<%@ include file="navBar.jsp" %>
+		<%@ include file="../../includes/navBar.jsp" %>
 
 	<div class="content ">
 

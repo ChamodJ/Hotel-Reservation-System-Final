@@ -90,6 +90,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Room Info</title>
  
+ <link rel="stylesheet" href="../../styles/navBar.css">
 </head>
 <body>
 
@@ -101,7 +102,7 @@
 	}
 	--%>
 	
-	<%@ include file="navBar.jsp" %>
+	<%@ include file="../../includes/navBar.jsp" %>
 	
 	<%
 	Connection connection = DBConnectionUtil.getDBConnection();

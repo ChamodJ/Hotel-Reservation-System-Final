@@ -82,6 +82,7 @@
 
   </style>
 
+<link rel="stylesheet" href="../../styles/navBar.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -97,7 +98,7 @@
 	--%>
 	
 
-	<%@ include file="navBar.jsp" %>
+	<%@ include file="../../includes/navBar.jsp" %>
 
 	<div class="content ">
         

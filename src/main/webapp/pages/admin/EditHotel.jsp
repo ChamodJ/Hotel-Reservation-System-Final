@@ -101,6 +101,8 @@
 }
 </style>
 
+<link rel="stylesheet" href="../../styles/navBar.css">
+
 <link rel="stylesheet" href="Header.css">
 </head>
 <body >
@@ -114,7 +116,7 @@
 	Hotel hotel = hs.getHotelById(Hotel_id);
 	%>
 
-	<%@ include file="../includes/navBar.jsp"%>
+	<%@ include file="../../includes/navBar.jsp"%>
 	<div class="content ">
 
 		<div class="addHotel">

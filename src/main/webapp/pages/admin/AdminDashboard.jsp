@@ -73,7 +73,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="../../styles/navBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
@@ -89,7 +89,7 @@
 	--%>
   	
   
-  	<%@ include file="navBar.jsp" %>
+  	<%@ include file="../../includes/navBar.jsp" %>
   	<%
   		AdminServices as = new AdminServices();
   		int ucount = as.userCount();

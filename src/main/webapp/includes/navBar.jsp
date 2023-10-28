@@ -47,10 +47,10 @@
         </h4>
       </div>
       
-      <a href="../pages/AdminDashboard.jsp"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-      <a href="../pages/Hotelinfo.jsp"><i class="fas fa-cogs"></i><span>Hotels</span></a>
-      <a href="../pages/Roominfo.jsp"><i class="fas fa-table"></i><span>Rooms</span></a>
-      <a href="../pages/AdminReservation.jsp"><i class="fas fa-th"></i><span>Reservations</span></a>
+      <a href="AdminDashboard.jsp"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="Hotelinfo.jsp"><i class="fas fa-cogs"></i><span>Hotels</span></a>
+      <a href="Roominfo.jsp"><i class="fas fa-table"></i><span>Rooms</span></a>
+      <a href="AdminReservation.jsp"><i class="fas fa-th"></i><span>Reservations</span></a>
       <a href="#"><i class="fas fa-info-circle"></i><span>Users</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
       
