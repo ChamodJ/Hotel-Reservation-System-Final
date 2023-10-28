@@ -14,7 +14,7 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class DeleteRoomServlet
  */
-@WebServlet("/DeleteRoomServlet")
+@WebServlet("/pages/admin/deleter")
 public class DeleteRoomServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
