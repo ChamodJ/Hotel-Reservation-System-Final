@@ -44,14 +44,14 @@
 
             <div class="bookNow-page">
 
-                <p>
+             
                     <h2>
                         This five-star hotels provide a variety of amenities and leisure opportunities to allow vacationing families,<br />
                         couples, and business travelers relax and refresh.
                         This consists of a complete fitness center, <br />The Scenic Ridge has a sizable pool with beautiful view,<br />
                         and a number of additional services and amenities to meet your business needs.
                     </h2>
-                </p>
+          
 
                 <div class="image-grid">
                     <div class="full-width">
