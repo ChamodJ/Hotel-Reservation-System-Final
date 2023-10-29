@@ -154,7 +154,7 @@
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">16000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                        
                         
                         </div>
                     </div>
@@ -165,7 +165,8 @@
                         <div class="card__title">Presidential Suite</div>
                         <div class="card__subtitle">200000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        
                         
                         </div>
                     </div>
@@ -176,7 +177,8 @@
                         <div class="card__title">Honeymoon Suite</div>
                         <div class="card__subtitle">160000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        
                         
                         </div>
                     </div>
@@ -187,7 +189,8 @@
                         <div class="card__title">Deluxe Rooms</div>
                         <div class="card__subtitle">25000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        
                         
                         </div>
                     </div>
@@ -205,7 +208,8 @@
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">12000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                        <  <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        
                         
                         </div>
                     </div>
@@ -216,7 +220,8 @@
                         <div class="card__title">Presidential Suite</div>
                         <div class="card__subtitle">120000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        
                         
                         </div>
                     </div>

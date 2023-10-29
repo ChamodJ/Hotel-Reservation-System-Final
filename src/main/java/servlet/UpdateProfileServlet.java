@@ -12,8 +12,6 @@ import java.io.IOException;
 import model.User;
 import service.UserServiceImplementation;
 import service.Userservices;
-
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -68,8 +66,7 @@ public class UpdateProfileServlet extends HttpServlet {
    		     userservice.updateUser(user);
         	
         }
-    	RequestDispatcher dispatcher = request.getRequestDispatcher("overview.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/pages/manage.jsp");
         
 		 
 		
