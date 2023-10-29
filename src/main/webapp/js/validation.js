@@ -63,3 +63,8 @@ function loginValidateForm(){
 	return true;
 	
 }
+
+function makeReservationValid(){
+	
+	return true
+}

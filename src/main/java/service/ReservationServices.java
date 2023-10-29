@@ -57,9 +57,10 @@ private  Connection connection;
 
 	// Method to update room information
 	public boolean updateReservation(Booking booking) {
+		System.out.println(booking.getUser_id());
         boolean f = false;
         try {
-            String SQL = "UPDATE reservation SET User_id=?, Hotel_id=?, room_id=?, check_in_date=?, check_out_date=?, No_of_Gusts=?, Amount=? WHERE Reservaton_id=?";
+            String SQL = "UPDATE reservaton SET User_id=?, Hotel_id=?, room_id=?, check_in_date=?, check_out_date=?, No_of_Gusts=?, Amount=? WHERE Reservaton_id=?";
             PreparedStatement ps = connection.prepareStatement(SQL);
 
             ps.setInt(1, booking.getUser_id());
