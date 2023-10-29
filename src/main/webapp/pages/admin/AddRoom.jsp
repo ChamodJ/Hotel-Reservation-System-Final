@@ -13,7 +13,7 @@
 
 .form-box {
 	width: 400px;
-	min-height: 800px;
+	min-height: 720px;
 	background: #f1f7fe;
 	overflow: hidden;
 	border-radius: 16px;
@@ -100,7 +100,7 @@
 <meta charset="UTF-8">
 <title>Add Hotel</title>
 <link rel="stylesheet" href="../../styles/navBar.css">
-<script defer src="js/adminValidation.js"></script>
+<script defer src="../../js/adminValidation.js"></script>
 </head>
 <body >
 

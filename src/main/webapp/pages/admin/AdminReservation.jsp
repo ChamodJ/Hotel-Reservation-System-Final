@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RoomInfo</title>
+<title>Reservations</title>
 <style>
 .click {
     text-align: center;

@@ -101,7 +101,7 @@
 <title>Add Hotel</title>
 
 <link rel="stylesheet" href="../../styles/navBar.css">
-<script defer src="js/adminValidation.js"></script>
+<script defer src="../../js/adminValidation.js"></script>
 </head>
 
 <body class="overflow">

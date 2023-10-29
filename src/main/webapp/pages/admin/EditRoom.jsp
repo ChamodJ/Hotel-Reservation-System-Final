@@ -19,7 +19,7 @@
 
 .form-box {
 	width: 400px;
-	min-height: 800px;
+	min-height: 700px;
 	background: #f1f7fe;
 	overflow: hidden;
 	border-radius: 16px;
