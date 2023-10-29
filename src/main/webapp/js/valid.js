@@ -4,33 +4,7 @@
 /**
  * 
  */
-console.log("This is a message to the console.");
- function showProfileForm() {
-	     console.log("This is a message to the consonnnle.");
-        	toggleActive(event.currentTarget);
-            document.getElementById("profile-form").style.display = "block";
-            document.getElementById("change-password-form").style.display = "none";
-            
-        }
 
-        function showChangePasswordForm() {
-        	toggleActive(event.currentTarget);
-            document.getElementById("change-password-form").style.display = "block";
-            document.getElementById("profile-form").style.display = "none";
-            
-         
-        }
-        
-        function toggleActive(clickedItem) {
-            // Remove "active" class from all navigation items
-            var navItems = document.querySelectorAll('.sidebar a');
-            for (var i = 0; i < navItems.length; i++) {
-                navItems[i].classList.remove('active');
-            }
-
-            // Add "active" class to the clicked navigation item
-            clickedItem.classList.add('active');
-        }
 
 function checkPasswordMatch() {
         const password = document.getElementById('newPassword').value;
@@ -170,4 +144,7 @@ function validateCheckoutDate() {
     }
 }
 
-    
+
+    function confirmDelete() {
+    return confirm('Are you sure you want to delete your account? This action cannot be undone.');
+}

@@ -117,7 +117,6 @@
 						<th>Email</th>
 						<th>Address</th>
 						<th>Mobile No</th>
-						<th>Date od Birth</th>
 						<th>Password</th>
 						<th>Role</th>
 						<th>Action</th>
@@ -139,7 +138,6 @@
 						<td><%=r.getEmail()%></td>
 						<td><%=r.getAddress()%></td>
 						<td><%=r.getMobile_No()%></td>
-						<td><%=r.getDate_of_birth()%></td>
 						<td><%=r.getPassword()%></td>
 						<td><%=r.getRole()%></td>
 

@@ -2,7 +2,7 @@ package servlet;
 
 
 
-import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -80,10 +80,8 @@ public class SignIn extends HttpServlet {
 			//Redirect to Home page
 			else if(Role.equals("user")) {
 				request.setAttribute("user", user);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("Home.jsp");
-                dispatcher.forward(request, response);
-				//response.sendRedirect("../pages/landingPages/Home.jsp");
-				System.out.println("user");
+				 response.sendRedirect(request.getContextPath() + "/pages/landingPages/Home.jsp");
+				
 			}
 			
 		
@@ -93,7 +91,7 @@ public class SignIn extends HttpServlet {
         } else {
             // If authentication fails, show an error message or redirect to the login page
         	System.out.println("none");
-        	response.sendRedirect("SignIn.jsp");
+        	 response.sendRedirect(request.getContextPath() + "SignIn.jsp");
         }
         
         

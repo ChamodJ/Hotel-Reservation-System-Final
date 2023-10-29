@@ -45,6 +45,7 @@ public class CancelBookingServlet extends HttpServlet {
 	            
 	            RequestDispatcher dispatcher = request.getRequestDispatcher("mybooking.jsp");
 	            dispatcher.forward(request, response);
+	            response.sendRedirect(request.getContextPath() + "/pages/user/mybooking.jsp");
 	           
 	}
 	}

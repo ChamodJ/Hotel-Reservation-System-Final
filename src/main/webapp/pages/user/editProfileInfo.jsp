@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Edit Profile</title>
-    <script src="../js/valid.js"></script> 
+    <script src="../../js/valid.js"></script> 
     
     <style type="text/css">
     	.intro h1 {
@@ -58,7 +58,7 @@
     
 
     </style>
-    <link rel="stylesheet" href="../user.css">
+    <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
     
@@ -82,11 +82,11 @@
 
       <div class="links">
         <div class="links-content">
-           <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
+           <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
             <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
-            <a href="../viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
-            <a href="../mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
-            <a href="../Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
+            <a href="viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
+            <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
+            <a href="../landingPages/Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
         
       </div>

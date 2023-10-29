@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>personal Info</title>
+    <title>Personal Info</title>
   
     
     <style type="text/css">
@@ -190,7 +190,7 @@
     background-color: #ccc;
 }
     </style>
-    <link rel="stylesheet" href="../user.css">
+    <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
     
@@ -199,7 +199,7 @@
         <h3><span>The Scenic Ridge</span></h3>
       </div>
       <div class="right_area">  
-    		<a href="../SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
+    		<a href="/Hotel-Reservation-System-Final/SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
       </div>
       
       
@@ -212,11 +212,11 @@
 
       <div class="links">
         <div class="links-content">
-            <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
+            <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
             <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
-            <a href="../viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
-            <a href="../mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
-            <a href="../Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
+            <a href="viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
+            <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
+            <a href="../landingPages/Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
         
       </div>
@@ -232,7 +232,7 @@
             <button class="tab" onclick="openForm('form2', event)">Profile Settings</button>
             <button class="tab" onclick="openForm('form3', event)">Change Password</button>
             <button class="tab" onclick="openForm('form4', event)">Delete Account</button>
-            <!-- Add more buttons for additional forms -->
+            
         </div>
          <div class="tabbed-forms"> 
                      <div id="form1" class="form">
@@ -282,7 +282,7 @@
             <form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
             <h2>Change Password </h2>
           Current Password : 
-          <input type="password" id="oldPassword" name="currentpwd" required>
+          <input type="password" id="oldPassword" name="currentpwd" required><br>
           <a href="" >Forgot password? </a> <br> <br>
           
          New Password : 
@@ -299,11 +299,12 @@
     </div>
     
       <div id="form4" class="form">
-                <h2>Delete Account</h2>
-                <form method="post" action="DeleteProfileServlet">
-                    <button type="submit" name="deleteAccount">Delete Account</button>
-                </form>
-            </div>
+       <h2>Delete Account</h2>
+          <form method="post" action="/Hotel-Reservation-System-Final/DeleteProfileServlet" onsubmit="return confirmDelete();">
+           <button type="submit" name="deleteAccount">Delete Account</button>
+          </form>
+     </div>
+
          
 </div>
 </div>
@@ -331,6 +332,6 @@
         openForm("form1", event);
     </script>
 		
-  <script src="../js/valid.js"></script> 
+  <script src="../../js/valid.js"></script> 
   </body>
 </html>

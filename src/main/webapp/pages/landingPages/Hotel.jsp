@@ -6,8 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hotel</title>
-<link rel="stylesheet" type="text/css" href="styles/landingPages.css">
- <script src="js/valid.js"></script> 
+<link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
+ <script src="../../js/valid.js"></script> 
 </head>
 <body>
       <header>
@@ -15,23 +15,23 @@
     <nav class="nav-bar">
         <a class="links" href="Home.jsp">Home</a>
         <a class="current links" href="Hotel.jsp">Hotels</a>
-        <a class="links" href="pages/landingPages/Services.jsp">Services</a>
-        <a class="links" href="pages/landingPages/AboutUs.jsp">About Us</a>
-        <a class=" links" href="pages/landingPages/Contact.jsp">Contact</a>
+        <a class="links" href="Services.jsp">Services</a>
+        <a class="links" href="AboutUs.jsp">About Us</a>
+        <a class=" links" href="Contact.jsp">Contact</a>
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
         %>
-        <a href="SignIn.jsp"><button class="login-btn">Log In</button></a>
-        <a href="SignUp.html"><button class="login-btn">Register</button></a>
+        <a href="../../SignIn.jsp"><button class="login-btn">Log In</button></a>
+        <a href="../../SignUp.html"><button class="login-btn">Register</button></a>
         <%
             } else {
         %>
         <div class="user-dropdown">
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
-                <a href="overview.jsp">User Profile</a>
-                <a href="SignOutServlet">Sign Out</a>
+                <a href="../user/overview.jsp">User Profile</a>
+                <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
         <%
@@ -47,45 +47,45 @@
                 <div class="hRooms">
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/family-room.webp"></div>
+                        <div class="card__img"><img src="../../Image/family-room.webp"></div>
                         
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">20000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=3&roomID=CFM&amount=20000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=3&roomID=CFM&amount=20000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Presidential-Suite.webp"></div>
+                        <div class="card__img"><img src="../../Image/Presidential-Suite.webp"></div>
                         
                         <div class="card__title">Presidential Suite</div>
                         <div class="card__subtitle">230000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=3&roomID=CPS&amount=230000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=3&roomID=CPS&amount=230000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Honeymoon-Suite.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Honeymoon-Suite.jpg"></div>
                         
                         <div class="card__title">Honeymoon Suite</div>
                         <div class="card__subtitle">200000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=3&roomID=CHS&amount=200000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=3&roomID=CHS&amount=200000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Deluxe-Room.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Deluxe-Room.jpg"></div>
                         
                         <div class="card__title">Deluxe Rooms</div>
                         <div class="card__subtitle">30000.00/= PerNight</div>
                         <div class="card__wrapper">
-                         <a href="pages/makeBooking.jsp?hotelID=3&roomID=CDR&amount=30000.00" class="card__btn">Book Now</a>
+                         <a href="makeBooking.jsp?hotelID=3&roomID=CDR&amount=30000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
@@ -98,45 +98,45 @@
                 <div class="hRooms">
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/family-room.webp"></div>
+                        <div class="card__img"><img src="../../Image/family-room.webp"></div>
                         
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">16000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=2&roomID=BFM&amount=16000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=2&roomID=BFM&amount=16000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Villa-Suite.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Villa-Suite.jpg"></div>
                         
                         <div class="card__title">Villa Suite</div>
                         <div class="card__subtitle">100000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=2&roomID=BVS&amount=100000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=2&roomID=BVS&amount=100000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Honeymoon-Suite.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Honeymoon-Suite.jpg"></div>
                         
                         <div class="card__title">Honeymoon Suite</div>
                         <div class="card__subtitle">160000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=2&roomID=BHS&amount=160000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=2&roomID=BHS&amount=160000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Deluxe-Room.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Deluxe-Room.jpg"></div>
                         
                         <div class="card__title">Deluxe Rooms</div>
                         <div class="card__subtitle">25000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
@@ -149,47 +149,48 @@
                 <div class="hRooms">
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/family-room.webp"></div>
+                        <div class="card__img"><img src="../../Image/family-room.webp"></div>
                         
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">16000.00/= PerNight</div>
                         <div class="card__wrapper">
+                        <a href="makeBooking.jsp?hotelID=1&roomID=GFM&amount=16000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Presidential-Suite.webp"></div>
+                        <div class="card__img"><img src="../../Image/Presidential-Suite.webp"></div>
                         
                         <div class="card__title">Presidential Suite</div>
                         <div class="card__subtitle">200000.00/= PerNight</div>
                         <div class="card__wrapper">
-                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                          <a href="makeBooking.jsp?hotelID=1&roomID=GPS&amount=200000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Honeymoon-Suite.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Honeymoon-Suite.jpg"></div>
                         
                         <div class="card__title">Honeymoon Suite</div>
                         <div class="card__subtitle">160000.00/= PerNight</div>
                         <div class="card__wrapper">
-                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                          <a href="makeBooking.jsp?hotelID=1&roomID=GHS&amount=160000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Deluxe-Room.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Deluxe-Room.jpg"></div>
                         
                         <div class="card__title">Deluxe Rooms</div>
                         <div class="card__subtitle">25000.00/= PerNight</div>
                         <div class="card__wrapper">
-                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                          <a href="makeBooking.jsp?hotelID=1&roomID=GDR&amount=25000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
@@ -203,47 +204,47 @@
                 <div class="hRooms">
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/family-room.webp"></div>
+                        <div class="card__img"><img src="../../Image/family-room.webp"></div>
                         
                         <div class="card__title">Family Room</div>
                         <div class="card__subtitle">12000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <  <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                        <a href="makeBooking.jsp?hotelID=4&roomID=JFM&amount=12000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Presidential-Suite.webp"></div>
+                        <div class="card__img"><img src="../../Image/Presidential-Suite.webp"></div>
                         
                         <div class="card__title">Presidential Suite</div>
                         <div class="card__subtitle">120000.00/= PerNight</div>
                         <div class="card__wrapper">
-                          <a href="pages/makeBooking.jsp?hotelID=2&roomID=BDR&amount=25000.00" class="card__btn">Book Now</a>
+                          <a href="makeBooking.jsp?hotelID=4&roomID=JPS&amount=120000.00" class="card__btn">Book Now</a>
                         
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Honeymoon-Suite.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Honeymoon-Suite.jpg"></div>
                         
                         <div class="card__title">Honeymoon Suite</div>
                         <div class="card__subtitle">120000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                        <a href="makeBooking.jsp?hotelID=4&roomID=JHS&amount=120000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card__img"><img src="Image/Deluxe-Room.jpg"></div>
+                        <div class="card__img"><img src="../../Image/Deluxe-Room.jpg"></div>
                         
                         <div class="card__title">Deluxe Rooms</div>
                         <div class="card__subtitle">18000.00/= PerNight</div>
                         <div class="card__wrapper">
-                        <button class="card__btn">Book Now</button>
+                        <a href="makeBooking.jsp?hotelID=4&roomID=JDR&amount=18000.00" class="card__btn">Book Now</a>
                         
                         </div>
                     </div>

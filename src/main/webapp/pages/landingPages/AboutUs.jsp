@@ -7,19 +7,18 @@
 <meta charset="ISO-8859-1">
 
     <title>About Us</title>
-       <link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
-         <script src="../../js/valid.js"></script>  
-    </head>
-
-     <body class="overflow">
-              <header>
+<link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
+ <script src="../../js/valid.js"></script> 
+</head>
+<body >
+      <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">
-        <a class="links" href="../../Home.jsp">Home</a>
-        <a class="links" href="../../Hotel.jsp">Hotels</a>
+        <a class="  links" href="Home.jsp">Home</a>
+        <a class="links" href="Hotel.jsp">Hotels</a>
         <a class="links" href="Services.jsp">Services</a>
         <a class="current links" href="AboutUs.jsp">About Us</a>
-        <a class="links" href="Contact.jsp">Contact</a>
+        <a class=" links" href="Contact.jsp">Contact</a>
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
@@ -32,7 +31,7 @@
         <div class="user-dropdown">
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
-                <a href="../../overview.jsp">User Profile</a>
+                <a href="../user/overview.jsp">User Profile</a>
                 <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
@@ -41,7 +40,6 @@
         %>
     </nav>
 </header>
-
     <div class="aboutus-card">
             <div class="bg">
                 <div class="aboutUs-Text">

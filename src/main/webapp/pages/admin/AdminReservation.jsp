@@ -120,7 +120,7 @@
 						<th>Check In Date</th>
 						<th>Check Out Date</th>
 						<th>Reservation Date</th>
-						<th>No Of Gusts</th>
+						<th>No Of Guests</th>
 						<th>Amount</th>
 						<th>Action</th>
 					</tr>
@@ -147,9 +147,9 @@
 						<td><a
 							href="EditReservation.jsp?Reservaton_id=<%=r.getReservaton_id()%>">
 								<button class="btn A">Edit</button>
-						</a> <a href="deleteres?Reservaton_id=<%=r.getReservaton_id()%>">
-								<button class="btn A D">Delete</button>
-						</a></td>
+						</a> 
+						<button class="btn A D" onclick="confirmDelete(<%=r.getReservaton_id()%>)">Delete</button>
+						</td>
 					</tr>
 
 					<%
@@ -160,5 +160,14 @@
 			</table>
 		</div>
 	</div>
+	
+	<script>
+        function confirmDelete(reservationId) {
+            if (window.confirm("Are you sure you want to delete this reservation?")) {
+                // If the user confirms, redirect to the delete URL
+                window.location.href = "deleteres?Reservaton_id=" + reservationId;
+            }
+        }
+    </script>
 </body>
 </html>

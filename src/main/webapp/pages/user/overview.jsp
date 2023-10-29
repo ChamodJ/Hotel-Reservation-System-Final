@@ -9,11 +9,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Bookings</title>
-    <script src="js/valid.js"></script> 
+    <title>OverView</title>
     
     <style type="text/css">
-    	.detailtable {
+    
+    .welcome-div {
+    	text-align: center;
+    }
+    
+    .container {
+    	margin: 40px 20px;
+    	display: flex;
+    	justify-content: space-between;
+    }
+    
+    .card {
+		 min-width: 350px;
+		 height: 400px;
+		 background: white;
+		 border-radius: 10px;
+		 transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+	
+	.shadow {
+	 	box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+	             0 0  0 2px rgb(190, 190, 190),
+	             0.3em 0.3em 1em rgba(0,0,0,0.3);
+	}
+	
+	.user-profile {
+		text-align: center;
+		line-height: 2pc;
+	}  
+    
+    .rTable{
+    	text-align: center;
+    }
+    
+    .detailtable {
     display: flex;
     justify-content: center;
 }
@@ -51,8 +84,14 @@
 	border-bottom: 2px solid black;
 }
 
+.current::after {
+		    content: '';
+		    background: #00b4d8(214, 0, 0); 
+		    color: #e44c06;  
+		}
+    	
     </style>
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
     
@@ -61,8 +100,8 @@
         <h3><span>The Scenic Ridge</span></h3>
       </div>
       <div class="right_area">  
-    		<a href="SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
-      </div>v>
+    		<a href="/Hotel-Reservation-System-Final/SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
+      </div>
       
       
     </header>
@@ -75,21 +114,46 @@
       <div class="links">
         <div class="links-content">
             <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
-            <a href="pages/manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
+            <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
             <a href="viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
             <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
-            <a href="Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
+            <a href="../landingPages/Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
         
       </div>
     </div>
 
     <div class="content">
+		<div class="welcome-div">
+				<%
+		            User user = (User) session.getAttribute("user");
+		             
+		        %>
+		
+		      <h1>Welcome, <%= user.getUsername() %>!</h1>
+
+		</div>
     
-    <%
-    User user = (User) session.getAttribute("user");
-    %>
-    	<div class="detailtable">
+  <div class="container">
+  
+  	<div class="card shadow">
+  		<div class="user-profile" >
+	    <h2>User Profile</h2>
+	    
+	    <p> user id: <%= user.getUser_ID() %> </p>
+	    <p> Name: <%= user.getUsername() %> </p>
+	    <p> Email:<%= user.getEmail() %> </p>
+	    <p> Address: <%= user.getAddress() %> </p>
+	    <p> Phone: <%= user.getMobile_No() %> </p>
+   </div> 
+	</div>
+
+ 	
+   
+   <div class="rTable">
+   		<h2>Upcoming Reservations</h2>
+		<div class="detailtable">
+			
             <table>
                 <thead>
                     <tr>
@@ -98,8 +162,6 @@
                         <th>Room Type</th>
                         <th>Check In Date</th>
                         <th>Check Out Date</th>
-                        <th>Reservation Date</th>
-                        <th>Number of Guests</th>
                         <th>Total Price</th>
                     </tr>
                 </thead>
@@ -109,30 +171,31 @@
                 BookingServices bookingService = new BookingServiceImplementation();
                 List<Booking> currentBookings = bookingService.selectAllCurrentUserBooking(user.getUser_ID());
 
-                for (Booking booking : currentBookings) {  
-           		%>
+                for (Booking booking : currentBookings) { 
+           %>
 
-                    <tr>
-                        <td><%= booking.getReservaton_id() %></td>
-                        <td><%= booking.getHotelName() %></td>
-                        <td><%= booking.getRoomType() %></td>
-                        <td><%= booking.getCheck_in_date() %></td>
-                        <td><%= booking.getCheck_out_date() %></td>
-                        <td><%= booking.getReservation_date() %></td>        
-             			<td><%= booking.getNo_of_Gusts()    %></td>
-                        <td><%= booking.getAmount() %></td>
-                    </tr>
-                    
-                    <%
-                		}
-                    %>
+             <tr>
+                <td><%= booking.getReservaton_id() %></td>
+                <td><%= booking.getHotelName() %></td>
+                <td><%= booking.getRoomType()    %></td>
+                <td><%= booking.getCheck_in_date() %></td>
+                <td><%= booking.getCheck_out_date() %></td>
+                <td>Rs. <%= booking.getAmount() %></td>
+            </tr>
+            <%
+                }
+            %>
 
                 </tbody>
             </table>
         </div>
-		
+   </div>
    
-	</div>
+ 
+   
+	</div>    
+   
+</div>
 
   </body>
 </html>

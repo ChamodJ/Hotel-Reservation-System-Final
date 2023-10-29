@@ -25,7 +25,8 @@ public class SignOutServlet extends HttpServlet {
     		session.invalidate();
         }
         try {
-			response.sendRedirect("Home.jsp");
+        	response.sendRedirect(request.getContextPath() + "/pages/landingPages/Home.jsp");
+			
 		} catch (IOException e) {
 			
 			e.printStackTrace();

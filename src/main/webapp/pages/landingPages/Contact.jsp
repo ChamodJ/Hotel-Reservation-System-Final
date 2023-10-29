@@ -6,20 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Contact Us</title>
-<title>About Us</title>
-       <link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
-         <script src="../../js/valid.js"></script>  
-    </head>
 
-    <body class="page bg-img contact-bg">
-     <header>
+  <link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
+ <script src="../../js/valid.js"></script> 
+</head>
+<body class="bg-img contact-bg">
+      <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">
-        <a class="links" href="../../Home.jsp">Home</a>
-        <a class="links" href="../../Hotel.jsp">Hotels</a>
+        <a class="links" href="Home.jsp">Home</a>
+        <a class=" links" href="Hotel.jsp">Hotels</a>
         <a class="links" href="Services.jsp">Services</a>
-        <a class=" links" href="AboutUs.jsp">About Us</a>
-        <a class="current links" href="Contact.jsp">Contact</a>
+        <a class="links" href="AboutUs.jsp">About Us</a>
+        <a class="current  links" href="Contact.jsp">Contact</a>
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
@@ -32,7 +31,7 @@
         <div class="user-dropdown">
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
-                <a href="../../overview.jsp">User Profile</a>
+                <a href="../user/overview.jsp">User Profile</a>
                 <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
@@ -84,17 +83,13 @@
             </div>
   
             <div class="contact-info-div"> 
-<!--
-              <div class="map-div">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.55094285295772!2d79.85080629485013!3d6.912700246811201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259c376de9c57%3A0x4da394d216c60719!2sSri%20Lanka%20Institute%20of%20Information%20Technology%20(%20Guarantee%20)%20Limited!5e0!3m2!1sen!2slk!4v1697822873272!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
--->
+
               <div class="contact-info">
                 <h1>Corporate Contact</h1>
                 <h2>Head Office</h2>
                 <p>The Scenic Ridge Limited
-                No 02, Somewhere, <br>Something <br> Sri Lanka.<br>
-                +94 77 54 84 445<br>
+                No 02, Colpetty, <br>Colombo <br> Sri Lanka.<br>
+                +94 77 54 84 44a<br>
                 +94 77 54 84 445</p>
               </div>
 

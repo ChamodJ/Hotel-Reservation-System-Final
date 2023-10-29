@@ -66,7 +66,7 @@ public class UpdateProfileServlet extends HttpServlet {
    		     userservice.updateUser(user);
         	
         }
-        response.sendRedirect(request.getContextPath() + "/pages/manage.jsp");
+        response.sendRedirect(request.getContextPath() + "/pages/user/manage.jsp");
         
 		 
 		
