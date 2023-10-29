@@ -57,7 +57,7 @@
         <div class="bookNow-page">
             <div class="contactForm-div">
 	
-	 <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
+	 <form class="formbook"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
     
 	     <%
