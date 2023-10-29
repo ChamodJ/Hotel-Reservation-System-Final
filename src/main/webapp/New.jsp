@@ -22,7 +22,7 @@
     
     .card {
 		 min-width: 350px;
-		 min-height: 400px;
+		 min-height: 450px;
 		 background: white;
 		 border-radius: 10px;
 		 transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -31,7 +31,12 @@
 	}
 	
 	.card2 {
-		display: absolute;
+		display: none;
+		position: absolute;
+		width : 400px;
+		height : 400px;
+		top: 130px;
+		right: 120px;
 	}
 	
 	.shadow {
@@ -44,6 +49,27 @@
 		text-align: center;
 		line-height: 2pc;
 	}  
+	
+	.aLinks {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	
+	.btn {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  border: 3px solid rgb(252, 70, 100);
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  font-family: inherit;
+}
     
     .rTable{
     	text-align: center;
@@ -194,34 +220,31 @@
 	   		</div> 
 	   		
 	   		<div class="aLinks">
-	   		 <button onclick="location.href='pages/editProfileInfo.jsp'">Edit Profile</button>
+	   			<div>
+	   				<button class="btn" onclick="location.href='pages/editProfileInfo.jsp'">Edit Profile</button>
+	   			</div>
+	   			
+	   			<div>
+	   				<button class="btn" onclick="showProfileForm()">Profile Settings</button>
+	   			</div>
+	   			
+	   			<div>
+	   				<button class="btn" onclick="showChangePasswordForm()">Change Password</button>
+	   			</div>
 	   		 
-	   		 <button onclick="showProfileForm()">Profile Settings</button>
 	   		 
-	   		 <button onclick="showChangePasswordForm()">Change Password</button>
+	   		 
+	   		 
+	   		 
 
 	   		</div>
 	   		
 	   		
 		</div>
 		
-		<div class="card card2 shadow">
+		<div id="profile-form" class="card card2 shadow form-container">
   		<div class="user-profile" >
-	    <h2>User Profile</h2>
-	    
-	    <p> user id: <%= user.getUser_ID() %> </p>
-	    <p> Name: <%= user.getUsername() %> </p>
-	    <p> Email:<%= user.getEmail() %> </p>
-	    <p> Address: <%= user.getAddress() %> </p>
-	    <p> Phone: <%= user.getMobile_No() %> </p>
-   </div> 
-	</div>   
-		
-		
-        <!-- Profile Form (Initially Hidden) -->
-        <div id="profile-form" style="display: none;">
-            
-            <form method="post" action="/Hotel-Reservation-System-Final/UpdateProfileServlet" >
+	    <form method="post" action="/Hotel-Reservation-System-Final/UpdateProfileServlet" >
             
             <h2>Profile Settings</h2>
             <table>
@@ -244,13 +267,33 @@
             </table>
                  
             <button type="reset">Reset</button>
-        <button type="submit">Update</button> <br><br>
+        	<button type="submit">Update</button> <br><br>
         </form>
-        <form method="post" action="DeleteProfileServlet">
-    	<button type="submit" name="deleteAccount">Delete Account</button>
-		</form>
-        </div>
-        
+	        <form method="post" action="DeleteProfileServlet">
+	    		<button type="submit" name="deleteAccount">Delete Account</button>
+			</form>
+   		</div> 
+	</div>   
+	
+	<div id="change-password-form" class="card card2 shadow form-container">
+  		<form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
+            <h2>Change Password </h2>
+          Current Password : 
+          <input type="password" id="oldPassword" name="currentpwd" required>
+          <a href="" >Forgot password? </a> <br> <br>
+          
+         New Password : 
+          <input type="password" id= "newPassword" name="newpwd" required> <br> <br>
+          
+          Confirm New Password : 
+          <input type="password" id="confirmPassword" name="confirmpwd" required oninput="checkPasswordMatch()"> <br> <br>
+          
+	       <span id="passwordMatch" class="error"></span> <br> <br>
+	
+                <button type="submit" id="submitButton" disabled>Change Password</button>
+            </form> 
+	</div> 
+
         <div id="change-password-form" style="display: none;">
             
             <form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
