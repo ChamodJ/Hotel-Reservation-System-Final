@@ -124,7 +124,7 @@
                     <h2>Total Users</h2>
                 </div>
                 <div>
-                    <a ><button class="btn" type="button">Users</button></a>
+                    <a href="adminUser.jsp"><button class="btn" type="button">Users</button></a>
                 </div>
             </div>
 
