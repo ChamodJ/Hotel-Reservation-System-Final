@@ -11,28 +11,28 @@ import service.AdminServices;
 
 @WebServlet("/pages/admin/deleteu")
 public class DeleteuserServle extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public DeleteuserServle() {
-		super();
-	}
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            int User_ID = Integer.parseInt(req.getParameter("User_id"));
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		try {
-			
-			int User_ID = Integer.parseInt(req.getParameter("User_ID"));
+            AdminServices admin = new AdminServices();
+            boolean deleted = admin.deleteuser(User_ID);
 
-			AdminServices admin = new AdminServices();
-			admin.deleteuser(User_ID);
+            if (deleted) {
+                resp.sendRedirect("adminUser.jsp"); // Redirect to a page displaying user information
+            } else {
+                resp.getWriter().println("Failed to delete user.");
+            }
 
-			resp.sendRedirect("adminUser.jsp");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

@@ -149,24 +149,24 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 		return user;
 	}
 	public boolean deleteuser(int User_ID) {
-		boolean f = false;
-		
-		try {
-			Connection con = DBConnectionUtil.getDBConnection();
-			String sql = "delete from users where User_ID=?";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, User_ID);
+        boolean deleted = false;
 
-			int i = ps.executeUpdate();
+        try (Connection con = DBConnectionUtil.getDBConnection();
+             PreparedStatement ps = con.prepareStatement("DELETE FROM users WHERE User_id=?")) {
 
-			if (i == 1) {
-				f = true;
-			}
+            ps.setInt(1, User_ID);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return f;
-	}
+            int i = ps.executeUpdate();
+
+            if (i == 1) {
+                deleted = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return deleted;
+    }
 
 }
