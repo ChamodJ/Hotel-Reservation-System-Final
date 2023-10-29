@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <%@ page import="java.util.List" %> 
- <%@ page import="service.AdminServices" %>
- <%@ page import="model.Booking" %>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ page import="service.AdminServices"%>
+<%@ page import="model.Booking"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <title>Reservations</title>
 <style>
 .click {
-    text-align: center;
+	text-align: center;
 }
 
 .btn {
@@ -21,36 +21,36 @@
 	color: white;
 	align-items: center;
 }
-		
+
 .btn:hover {
 	background-color: #005ce6;
 	color: white;
 	cursor: pointer;
 }
-		
+
 .A {
 	border-radius: 10px;
 	text-decoration: none;
 }
-		
+
 .D {
 	background-color: #ff4d6d;
 }
-		
+
 .D:hover {
 	background-color: #c9184a;
 	color: white;
 }
 
 .detailtable {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .detailtable table {
-    max-width: 1100px;
-    text-align: center;
-    padding: 20px;
+	max-width: 1100px;
+	text-align: center;
+	padding: 20px;
 }
 
 .detailtable thead tr {
@@ -79,16 +79,15 @@
 .detailtable tbody tr:last-of-type {
 	border-bottom: 2px solid black;
 }
-
-  </style>
+</style>
 
 <link rel="stylesheet" href="../../styles/navBar.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
- 
+
 	<%--
 	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
 
@@ -96,67 +95,68 @@
 		response.sendRedirect("SignIn.jsp");
 	}
 	--%>
-	
 
-	<%@ include file="../../includes/navBar.jsp" %>
+	<!-- Include Navigation Bar -->
+	<%@ include file="../../includes/navBar.jsp"%>
 
 	<div class="content ">
-        
-        <div class="click">
-            <h1>Upcoming Reservations</h1>
-            <!--<a href="AddRoom.jsp"><button class="btn">Manage Reservations</button></a>-->
-        </div>
 
-        <div class="detailtable">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Reservation ID</th>
-                        <th>User ID</th>
-                        <th>Hotel ID</th>
-                        <th>Room ID</th>
-                        <th>Check In Date</th>
-                        <th>Check Out Date</th>
-                        <th>Reservation Date</th>
-                        <th>No Of Gusts</th>
-                        <th>Amount</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                
-                <%
-                	AdminServices as = new AdminServices();
-                    List<Booking> Reservations =as.getReservations();
-                	for (Booking r : Reservations) {
+		<div class="click">
+			<h1>Upcoming Reservations</h1>
+			<!--<a href="AddRoom.jsp"><button class="btn">Manage Reservations</button></a>-->
+		</div>
 
-                %>
+		<!-- Table to Display Reservations -->
+		<div class="detailtable">
+			<table>
+				<thead>
+					<tr>
+						<th>Reservation ID</th>
+						<th>User ID</th>
+						<th>Hotel ID</th>
+						<th>Room ID</th>
+						<th>Check In Date</th>
+						<th>Check Out Date</th>
+						<th>Reservation Date</th>
+						<th>No Of Gusts</th>
+						<th>Amount</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Loop through the list of reservations -->
+					<%
+					AdminServices as = new AdminServices();
+					List<Booking> Reservations = as.getReservations();
+					for (Booking r : Reservations) {
+					%>
 
-                    <tr>
-                        <td><%=	r.getReservaton_id() %></td>
-                        <td><%= r.getUser_id() %></td>
-                        <td><%= r.getHotel_id() %></td>
-                        <td><%= r.getRoom_id() %></td>
-                        <td><%= r.getCheck_in_date() %></td>
-                        <td><%= r.getCheck_out_date() %></td>
-                        <td><%= r.getReservation_date() %></td>
-                        <td><%= r.getNo_of_Gusts()    %></td>
-                        <td><%= r.getAmount() %></td>
+					<tr>
+						<td><%=r.getReservaton_id()%></td>
+						<td><%=r.getUser_id()%></td>
+						<td><%=r.getHotel_id()%></td>
+						<td><%=r.getRoom_id()%></td>
+						<td><%=r.getCheck_in_date()%></td>
+						<td><%=r.getCheck_out_date()%></td>
+						<td><%=r.getReservation_date()%></td>
+						<td><%=r.getNo_of_Gusts()%></td>
+						<td><%=r.getAmount()%></td>
 
-                        <td><a href="EditReservation.jsp?Reservaton_id=<%=r.getReservaton_id()%>">
-                                <button class="btn A">Edit</button>
-                        </a> <a href="deleteres?Reservaton_id=<%=r.getReservaton_id()%>">
-                                <button class="btn A D">Delete</button>
-                        </a></td>
-                    </tr>
-                    
-                    <%
-                		}
-                    %>
+						<td><a
+							href="EditReservation.jsp?Reservaton_id=<%=r.getReservaton_id()%>">
+								<button class="btn A">Edit</button>
+						</a> <a href="deleteres?Reservaton_id=<%=r.getReservaton_id()%>">
+								<button class="btn A D">Delete</button>
+						</a></td>
+					</tr>
 
-                </tbody>
-            </table>
-        </div>
-    </div>
+					<%
+					}
+					%>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

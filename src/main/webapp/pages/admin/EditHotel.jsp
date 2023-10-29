@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="service.HotelServiceImplementation"%>
-<%@ page import="util.CommonConstants"  %>
-<%@ page import="util.DBConnectionUtil"  %>
+<%@ page import="util.CommonConstants"%>
+<%@ page import="util.DBConnectionUtil"%>
 <%@ page import="java.sql.*"%>
 <%@page import="java.util.List"%>
-  <%@ page import="model.Hotel"%>
+<%@ page import="model.Hotel"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,8 +110,10 @@
 
 
 	<%
+	// Getting the Hotel ID from the request parameter
 	int Hotel_id = Integer.parseInt(request.getParameter("Hotel_id"));
 
+	// Getting the details of the hotel using the Hotel ID
 	HotelServiceImplementation hs = new HotelServiceImplementation(DBConnectionUtil.getDBConnection());
 	Hotel hotel = hs.getHotelById(Hotel_id);
 	%>
@@ -136,6 +138,8 @@
 
 					<button type="submit">Update Hotel</button>
 				</form>
+
+				<!-- Button for going back to Hotel Info page -->
 				<a href="Hotelinfo.jsp"><button class="back-btn">Back</button></a>
 			</div>
 		</div>

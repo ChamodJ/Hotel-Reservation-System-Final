@@ -5,7 +5,6 @@ import java.io.IOException;
 import model.User;
 import service.UserServiceImplementation;
 import service.Userservices;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -66,10 +65,10 @@ public class ChangePasswordServlet extends HttpServlet {
            		  response.sendRedirect("SignOutServlet"); 		 
         			 
         		 }else
-             		response.sendRedirect("ChangePasswordServlet"); 
+        			 response.sendRedirect(request.getContextPath() + "/pages/manage.jsp");
         }
         	else
-        		response.sendRedirect("ChangePasswordServlet"); 
+        		response.sendRedirect(request.getContextPath() + "SignIn.jsp");
         }
 	}
 

@@ -1,6 +1,5 @@
 package servlet;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -74,8 +73,9 @@ public class EditPersonalInfoServlet extends HttpServlet {
    		     userservice.updateUser(user);
         	
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("viewpersonalinfo.jsp");
-        dispatcher.forward(request, response);
+       // RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/manage.jsp");
+        //dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/viewpersonalinfo.jsp");
         
 	}
 

@@ -116,7 +116,8 @@
       <div class="links">
         <div class="links-content">
             <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
-            <a href="pages/manage.jsp"><i class="fas fa-table"></i><span>personal Info</span></a>
+            <a href="pages/manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
+            <a href="viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
             <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
             <a href="Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
@@ -158,6 +159,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Reservation ID</th>
                         <th>Hotel Name</th>
                         <th>Room Type</th>
                         <th>Check In Date</th>
@@ -175,11 +177,12 @@
            %>
 
              <tr>
+                <td><%= booking.getReservaton_id() %></td>
                 <td><%= booking.getHotelName() %></td>
                 <td><%= booking.getRoomType()    %></td>
                 <td><%= booking.getCheck_in_date() %></td>
                 <td><%= booking.getCheck_out_date() %></td>
-                <td><%= booking.getAmount() %></td>
+                <td>Rs. <%= booking.getAmount() %></td>
             </tr>
             <%
                 }
