@@ -661,5 +661,78 @@ header {
     overflow: hidden;
   }
   
+  
+  
+  /*Book Now*/
+
+.bookNow-bg {
+    background-image: url("../Image/Villa-Suite.jpg");
+}
+
+.bookNow-main {
+    display: grid;
+    place-items: center;
+}
+
+
+
+.formbook {
+    flex-direction: column;
+    gap: 3px;
+    min-width: 550px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: center;
+    
+   
+}
+
+.Inputflex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+  
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    text-align:center;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    input[type="text"], input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+
 
   

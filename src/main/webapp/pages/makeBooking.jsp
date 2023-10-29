@@ -46,6 +46,13 @@
         %>
     </nav>
 </header>
+
+<%
+    
+    if (user == null) {
+        response.sendRedirect("loginRequiredPage.jsp"); // Redirect to the login required page
+    } else {
+%>
  <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
     
@@ -117,6 +124,10 @@
 
     
 </form>
+
+<%
+    }
+%>
         
 <script>
     window.onload = function() {
