@@ -145,7 +145,7 @@
 
                         <td><a href="EditReservation.jsp?Reservaton_id=<%=r.getReservaton_id()%>">
                                 <button class="btn A">Edit</button>
-                        </a> <a href="#">
+                        </a> <a href="deleteres?Reservaton_id=<%=r.getReservaton_id()%>">
                                 <button class="btn A D">Delete</button>
                         </a></td>
                     </tr>
