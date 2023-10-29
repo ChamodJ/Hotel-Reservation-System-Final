@@ -17,7 +17,7 @@
 
 </head>
 <body>
-        <header>
+    <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">
         <a class="links" href="../Home.jsp">Home</a>
@@ -53,75 +53,80 @@
         response.sendRedirect("loginRequiredPage.jsp"); // Redirect to the login required page
     } else {
 %>
-<div>
- <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
+<div class="page bookNow-main">
+
+<div class="formbook">
+	
+	 <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
     
-     <%
-            String hotelIDParam = request.getParameter("hotelID");
-            int hotelId = Integer.parseInt(hotelIDParam );
-         	String roomId= request.getParameter("roomID");
-         	String amountParam = request.getParameter("amount");
+	     <%
+	            String hotelIDParam = request.getParameter("hotelID");
+	            int hotelId = Integer.parseInt(hotelIDParam );
+	         	String roomId= request.getParameter("roomID");
+	         	String amountParam = request.getParameter("amount");
+	
+	         	HotelServices hotelservice = new HotelServiceImplementation();
+	         	Hotel hotel = hotelservice.selectHotel(hotelId);
+	
+	         	RoomServices roomService = new RoomServiceImpelmentation(); // Initialize your service
+	         	Room room = roomService.selectRoom(roomId);
+	
+	         	// Get the IDs of the hotel and room (since that's what your schema expects).
+	         	String hotelName = hotel.getHotel_name();
+	         	String roomName = room.getType();
+	
+	         	// Continue with the form, and populate the form fields as needed.
+	         %>
+	         
+	       <br><br>
+	       
+	   <label>User ID</label>
+	     <input type="text" name="userid" value="<%=user.getUser_ID() %>" readonly>
+	    
+	
+	        <label>Hotel</label>
+	    <input type="text" name="hotelName"  value="<%= hotelName %>" readonly> <!-- Display the hotel name -->
+	    <input type="hidden" name="hotelId" value="<%= hotelId %>"> <!-- Hidden field to store the hotel ID -->
+	    
+	    <label>Room Type</label>
+	<input type="text" name="roomType" id="room" value="<%= roomName %>" readonly><!-- Display the room type -->
+	    <input type="hidden" name="roomId" id="room"  value="<%= roomId %>"> <!-- Hidden field to store the room ID -->
+	   
+	    
+	   <label>Check In Date</label>
+	<input type="date" name="checkin" id="checkin" oninput="validateCheckinDate()" >
+	 <span id="checkinerror" class="error"></span> 
+	
+	<label>Check Out Date</label>
+	<input type="date" name="checkout" id="checkout" oninput="validateCheckoutDate()" >
+	<span id="checkouterror" class="error"></span> 
+	     
+	      <label>Reservation Date</label>
+	    <input type="text" name="reservationDate" id="reservationDate" readonly>
+	    
+	    <label>No. of Guests</label>
+	    <select name="guest" id="guest">
+	       
+	        
+	        <!-- This will be populated dynamically based on the selected room type -->
+	    </select>
+	    
+	        <label>Amount</label>
+	 <input type="text" name="amount" value="<%= amountParam %>" readonly>
+	
+	
+	
+	
+	  <input type="submit" id="submitButton" value="Submit">
+	     
+	
+	
+	
+	    
+	</form>
+</div>
 
-         	HotelServices hotelservice = new HotelServiceImplementation();
-         	Hotel hotel = hotelservice.selectHotel(hotelId);
-
-         	RoomServices roomService = new RoomServiceImpelmentation(); // Initialize your service
-         	Room room = roomService.selectRoom(roomId);
-
-         	// Get the IDs of the hotel and room (since that's what your schema expects).
-         	String hotelName = hotel.getHotel_name();
-         	String roomName = room.getType();
-
-         	// Continue with the form, and populate the form fields as needed.
-         %>
-         
-       <br><br>
-       
-   <label>User ID</label>
-     <input type="text" name="userid" value="<%=user.getUser_ID() %>" readonly>
-    
-
-        <label>Hotel</label>
-    <input type="text" name="hotelName"  value="<%= hotelName %>" readonly> <!-- Display the hotel name -->
-    <input type="hidden" name="hotelId" value="<%= hotelId %>"> <!-- Hidden field to store the hotel ID -->
-    
-    <label>Room Type</label>
-<input type="text" name="roomType" id="room" value="<%= roomName %>" readonly><!-- Display the room type -->
-    <input type="hidden" name="roomId" id="room"  value="<%= roomId %>"> <!-- Hidden field to store the room ID -->
-   
-    
-   <label>Check In Date</label>
-<input type="date" name="checkin" id="checkin" oninput="validateCheckinDate()" >
- <span id="checkinerror" class="error"></span> 
-
-<label>Check Out Date</label>
-<input type="date" name="checkout" id="checkout" oninput="validateCheckoutDate()" >
-<span id="checkouterror" class="error"></span> 
-     
-      <label>Reservation Date</label>
-    <input type="text" name="reservationDate" id="reservationDate" readonly>
-    
-    <label>No. of Guests</label>
-    <select name="guest" id="guest">
-       
-        
-        <!-- This will be populated dynamically based on the selected room type -->
-    </select>
-    
-        <label>Amount</label>
- <input type="text" name="amount" value="<%= amountParam %>" readonly>
-
-
-
-
-  <input type="submit" id="submitButton" value="Submit">
-     
-
-
-
-    
-</form>
 </div>
 
 <%

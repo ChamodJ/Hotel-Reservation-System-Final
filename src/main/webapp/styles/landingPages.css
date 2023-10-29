@@ -679,7 +679,7 @@ header {
 .formbook {
     flex-direction: column;
     gap: 3px;
-    min-width: 550px;
+    width: 850px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
