@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>O</title>
+    <title>personal Info</title>
     <script src="js/valid.js"></script> 
     
     <style type="text/css">
@@ -188,8 +188,7 @@
       <div class="links">
         <div class="links-content">
             <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
-            <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Account</span></a>
-            <a href="#"><i class="fas fa-th"></i><span>Personal Info</span></a>
+            <a href="manage.jsp"><i class="fas fa-table"></i><span>personal Info</span></a>
             <a href="#"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
             <a href="#"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
@@ -221,7 +220,7 @@
 	   		
 	   		<div class="aLinks">
 	   			<div>
-	   				<button class="btn" onclick="location.href='pages/editProfileInfo.jsp'">Edit Profile</button>
+	   				<button class="btn" onclick="location.href='editProfileInfo.jsp'">Edit Profile</button>
 	   			</div>
 	   			
 	   			<div>
