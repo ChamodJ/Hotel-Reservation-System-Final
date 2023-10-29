@@ -171,10 +171,8 @@
       <div class="left_area">
         <h3><span>The Scenic Ridge</span></h3>
       </div>
-      <div class="right_area">
-        <form action="signout">
-          <button class="logout_btn" type="submit">Logout</button>
-        </form>
+      <div class="right_area">  
+    		<a href="SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
       </div>
       
       

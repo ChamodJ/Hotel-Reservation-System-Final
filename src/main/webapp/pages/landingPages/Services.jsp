@@ -55,13 +55,13 @@
 
                 <div class="image-grid">
                     <div class="full-width">
-                        <img src="../Image/Pool.jpg" alt="Pool">
+                        <img src="../../Image/Pool.jpg" alt="Pool">
                     </div>
                     <div class="half-width">
-                        <img src="../Image/Business.avif" alt="Business">
+                        <img src="../../Image/Business.avif" alt="Business">
                     </div>
                     <div class="half-width">
-                        <img src="../Image/Gym.avif" alt="Gym">
+                        <img src="../../Image/Gym.avif" alt="Gym">
                     </div>
                 </div>
 
