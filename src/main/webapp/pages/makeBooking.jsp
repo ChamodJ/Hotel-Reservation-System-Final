@@ -13,7 +13,7 @@
 <meta charset="ISO-8859-1">
 <title>Make Reservation</title>
 <link rel="stylesheet" type="text/css" href="../styles/landingPages.css">
-  <script src="../js/valid.js"></script>  
+
 
 </head>
 <body>
@@ -102,11 +102,7 @@
     
     <label>No. of Guests</label>
     <select name="guest" id="guest">
-        <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
+       
         
         <!-- This will be populated dynamically based on the selected room type -->
     </select>
@@ -137,6 +133,6 @@
     
 </script>
 
- <script src="js/valid.js"></script>  
+ <script src="../js/valid.js"></script>  
 </body>
 </html>
