@@ -40,9 +40,55 @@
         %>
     </nav>
 </header>
-  <div class="content">
-            <h1>dd</h1>
-        </div>
+  <div class="page bookNow-main">
+
+            <div class="bookNow-page">
+
+                <p>
+                    <h2>
+                        This five-star hotels provide a variety of amenities and leisure opportunities to allow vacationing families,<br />
+                        couples, and business travelers relax and refresh.
+                        This consists of a complete fitness center, <br />The Scenic Ridge has a sizable pool with beautiful view,<br />
+                        and a number of additional services and amenities to meet your business needs.
+                    </h2>
+                </p>
+
+                <div class="image-grid">
+                    <div class="full-width">
+                        <img src="../Image/Pool.jpg" alt="Pool">
+                    </div>
+                    <div class="half-width">
+                        <img src="../Image/Business.avif" alt="Business">
+                    </div>
+                    <div class="half-width">
+                        <img src="../Image/Gym.avif" alt="Gym">
+                    </div>
+                </div>
+
+
+                <h2>This five-star hotel offers a variety of on-site <br /> amenities as well as individualized services to suit your every need.</h2><br />
+                <div class="columns">
+                    <div class="column">
+                        <h3>CLEAN STAY</h3>
+                        <p>
+                            Our Promise To You Is To Deliver The Same Level Of Reliable And Friendly Service You would Expect From Hilton, But With the Added Confidence of Industry-Leading Hygiene Practices Created To Keep You Safe.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h3>CONVENIENCES</h3>
+                        <p>Free WIFI<br /> Free Parking<br /> Connecting Rooms</p>
+                    </div>
+                    <div class="column">
+                        <h3>EXPERIENCED STAFF</h3>
+                        <p>
+                            Provide Quality Service......
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+                </div>
 
         
 
