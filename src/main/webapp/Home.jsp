@@ -52,7 +52,7 @@
             
             <div class="button-div">
                 <button>
-                    <a href="booking.jsp"><span>Book Now</span></a> 
+                    <a href="Hotel.jsp"><span>Book Now</span></a> 
                 </button>
             </div>
         </div>
