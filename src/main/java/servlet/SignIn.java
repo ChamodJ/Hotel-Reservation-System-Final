@@ -74,7 +74,7 @@ public class SignIn extends HttpServlet {
 				request.setAttribute("user", user);
 				//response.sendRedirect("../pages/AdminDashboard.jsp");
 				
-				RequestDispatcher dispatcher = request.getRequestDispatcher("AdminDashboard.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("pages/admin/AdminDashboard.jsp");
 	            dispatcher.forward(request, response);
 			}
 			//Redirect to Home page

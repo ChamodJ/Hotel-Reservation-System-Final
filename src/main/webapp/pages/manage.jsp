@@ -190,7 +190,7 @@
             <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
             <a href="manage.jsp"><i class="fas fa-table"></i><span>personal Info</span></a>
             <a href="#"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
-            <a href="#"><i class="fas fa-sliders-h"></i><span>Home</span></a>
+            <a href="../Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
         
       </div>
