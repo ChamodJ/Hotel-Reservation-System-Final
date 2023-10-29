@@ -105,6 +105,16 @@
 <script defer src="../../js/adminValidation.js"></script>
 </head>
 <body>
+
+	<!--  Code for Handling Session -->
+	<%  
+	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
+
+	if(session.getAttribute("username") == null) {
+		response.sendRedirect("../../SignIn.jsp");
+	}
+	%>
+
 	<!-- Include the navigation bar -->
 	<%@ include file="../../includes/navBar.jsp"%>
 

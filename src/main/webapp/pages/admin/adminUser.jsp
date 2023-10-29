@@ -88,13 +88,14 @@
 <body>
 
 
-	<%--
+	<!--  Code for Handling Session -->
+	<%  
 	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
 
 	if(session.getAttribute("username") == null) {
-		response.sendRedirect("SignIn.jsp");
+		response.sendRedirect("../../SignIn.jsp");
 	}
-	--%>
+	%>
 
 	<!-- Include Navigation Bar -->
 	<%@ include file="../../includes/navBar.jsp"%>

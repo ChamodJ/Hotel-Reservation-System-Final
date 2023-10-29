@@ -107,6 +107,17 @@
 <link rel="stylesheet" href="../../styles/navBar.css">
 </head>
 <body>
+
+	<!--  Code for Handling Session -->
+	<%  
+	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
+
+	if(session.getAttribute("username") == null) {
+		response.sendRedirect("../../SignIn.jsp");
+	}
+	%>
+	
+
 	<%
 	//Getting the Reservation ID from the request parameter
 	int Reservaton_id = Integer.parseInt(request.getParameter("Reservaton_id"));
