@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="service.RoomServiceImpelmentation"%>
-<%@ page import="util.CommonConstants"  %>
-<%@ page import="util.DBConnectionUtil"  %>
+<%@ page import="util.CommonConstants"%>
+<%@ page import="util.DBConnectionUtil"%>
 <%@ page import="java.sql.*"%>
 <%@page import="java.util.List"%>
 <%@ page import="model.Room"%>
@@ -102,14 +102,16 @@
 </style>
 <link rel="stylesheet" href="../../styles/navBar.css">
 </head>
-<body >
+<body>
 
 	<%@ include file="../../includes/navBar.jsp"%>
 
 	<%
+	// Get Room ID from request parameter
 	String Room_Id = request.getParameter("Room_Id");
 
-	 RoomServiceImpelmentation roomdao = new RoomServiceImpelmentation(DBConnectionUtil.getDBConnection());
+	// Get Room details using Room ID
+	RoomServiceImpelmentation roomdao = new RoomServiceImpelmentation(DBConnectionUtil.getDBConnection());
 	Room room = roomdao.getRoomById(Room_Id);
 	%>
 
@@ -120,17 +122,26 @@
 					<span class="title">Edit Room</span>
 
 					<div class="form-container">
-						<input type="text" name="Room_Id" class="input" placeholder="Room Id" value="<%=room.getRoom_id()%>"> 
-						<input type="number" name="Hotel_id" class="input" placeholder="Hotel Id" value="<%=room.getHotel_id()%>"> 
-						<input type="text" name="Type" class="input" placeholder="Room Type" value="<%=room.getType()%>"> 
-						<input type="number" name="Price" class="input" placeholder="Room Price" value="<%=room.getPrice()%>"> 
-						<input type="text" name="bed_count" class="input" placeholder="No Of Beds" value="<%=room.getBed_count()%>"> 
-						<input type="text" name="Total_rooms" class="input" placeholder="Total Rooms" value="<%=room.getTotal_rooms()%>"> 
-						<input type="text" name="Reserved_room" class="input" placeholder="Reserved Room" value="<%=room.getReserved_room()%>">
+						<input type="text" name="Room_Id" class="input"
+							placeholder="Room Id" value="<%=room.getRoom_id()%>"> <input
+							type="number" name="Hotel_id" class="input"
+							placeholder="Hotel Id" value="<%=room.getHotel_id()%>"> <input
+							type="text" name="Type" class="input" placeholder="Room Type"
+							value="<%=room.getType()%>"> <input type="number"
+							name="Price" class="input" placeholder="Room Price"
+							value="<%=room.getPrice()%>"> <input type="text"
+							name="bed_count" class="input" placeholder="No Of Beds"
+							value="<%=room.getBed_count()%>"> <input type="text"
+							name="Total_rooms" class="input" placeholder="Total Rooms"
+							value="<%=room.getTotal_rooms()%>"> <input type="text"
+							name="Reserved_room" class="input" placeholder="Reserved Room"
+							value="<%=room.getReserved_room()%>">
 					</div>
 
 					<button type="submit">Update Room</button>
 				</form>
+
+				<!-- Button for going back to Room Info page -->
 				<a href="Roominfo.jsp"><button class="back-btn">Back</button></a>
 			</div>
 		</div>

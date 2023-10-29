@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>personal Info</title>
-    <script src="js/valid.js"></script> 
+  
     
     <style type="text/css">
     
@@ -161,7 +161,34 @@
     color: red;
     margin-top: 10px;
     font-size: 14px;
-    	
+    	}
+    	.tabbed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Style the tabs */
+.tabbed-tabs {
+    display: flex;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tab.active {
+    background-color: #ccc;
+}
     </style>
     <link rel="stylesheet" href="../user.css">
 </head>
@@ -188,7 +215,8 @@
       <div class="links">
         <div class="links-content">
             <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
-            <a href="manage.jsp"><i class="fas fa-table"></i><span>personal Info</span></a>
+            <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
+            <a href="../viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
             <a href="../mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
             <a href="../Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
@@ -200,100 +228,58 @@
     	<%
     		User user = (User) session.getAttribute("user");
     	%>
-    	<h2>User Profile</h2>
-    	<div class="card shadow">
-    		
-	  		<div class="user-profile" >
-			    <h2>Profile Information</h2>
-    
-			    <p> First Name: <%= user.getFirst_Name() %> </p>
-			    <p> Last Name: <%= user.getLast_Name() %> </p>
-			    <p> Email:<%= user.getEmail() %> </p>
-			    <p> Phone Number: <%= user.getMobile_No() %> </p>
-			    <p> Date of Birth: <%= user.getDate_of_birth() %> </p>
-			    <p> Nationality: <%= user.getNationality() %> </p>
-			    <p> Gender: <%= user.getGender() %> </p>
-			    <p> Address: <%= user.getAddress() %> </p>
-       
-    			
-	   		</div> 
-	   		
-	   		<div class="aLinks">
-	   			<div>
-	   				<button class="btn" onclick="location.href='editProfileInfo.jsp'">Edit Profile</button>
-	   			</div>
-	   			
-	   			<div>
-	   				<button class="btn" onclick="showProfileForm()">Profile Settings</button>
-	   			</div>
-	   			
-	   			<div>
-	   				<button class="btn" onclick="showChangePasswordForm()">Change Password</button>
-	   			</div>
-	   		 
-	   		 
-	   		 
-	   		 
-	   		 
-
-	   		</div>
-	   		
-	   		
-		</div>
-		
-		<div id="profile-form" class="card card2 shadow form-container">
+    	<div class="tabbed-container">
+        <div class="tabbed-tabs">
+            <button class="tab active" onclick="openForm('form1', event)">Profile Information</button>
+            <button class="tab" onclick="openForm('form2', event)">Profile Settings</button>
+            <button class="tab" onclick="openForm('form3', event)">Change Password</button>
+            <button class="tab" onclick="openForm('form4', event)">Delete Account</button>
+            <!-- Add more buttons for additional forms -->
+        </div>
+         <div class="tabbed-forms"> 
+                     <div id="form1" class="form">
+                <div class="container">
+                    <div class="user-profile">
+                        <!-- Display User Profile Information Here -->
+                        <h2>Profile Information</h2>
+                        <p>Username:<%= user.getUsername() %> </p>
+                        <p> Email:<%= user.getEmail() %> </p>
+			            <p> Phone Number: <%= user.getMobile_No() %> </p>
+                    </div>
+                </div>
+            </div>
+            
+                 <div id="form2" class="form">
+                <div id="profile-form" >
   		<div class="user-profile" >
-	    <form method="post" action="/Hotel-Reservation-System-Final/UpdateProfileServlet" >
-            
-            <h2>Profile Settings</h2>
-            <table>
-            <tr>
-				<td>Username</td>
-				<td><input type="text" name="Username" value="<%=user.getUsername() %>"  required /></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><input type="text" name="Email" value="<%=user.getEmail() %>"  required /></td>
-			</tr>
-			<tr>
-				<td> Phone Number</td>
-				<td><input type="text" name="PhoneNumber"
-					value="<%= user.getMobile_No() %>" required /></td>
-			</tr>
-            
-            
-            
-            </table>
-                 
-            <button type="reset">Reset</button>
-        	<button type="submit">Update</button> <br><br>
-        </form>
-	        <form method="post" action="DeleteProfileServlet">
-	    		<button type="submit" name="deleteAccount">Delete Account</button>
-			</form>
-   		</div> 
-	</div>   
-	
-	<div id="change-password-form" class="card card2 shadow form-container">
-  		<form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
-            <h2>Change Password </h2>
-          Current Password : 
-          <input type="password" id="oldPassword" name="currentpwd" required>
-          <a href="" >Forgot password? </a> <br> <br>
-          
-         New Password : 
-          <input type="password" id= "newPassword" name="newpwd" required> <br> <br>
-          
-          Confirm New Password : 
-          <input type="password" id="confirmPassword" name="confirmpwd" required oninput="checkPasswordMatch()"> <br> <br>
-          
-	       <span id="passwordMatch" class="error"></span> <br> <br>
-	
-                <button type="submit" id="submitButton" disabled>Change Password</button>
-            </form> 
-	</div> 
-
-        <div id="change-password-form" style="display: none;">
+                
+                        <form method="post" action="/Hotel-Reservation-System-Final/UpdateProfileServlet">
+                            <h2>Profile Settings</h2>
+                            <table>
+                                <tr>
+                                    <td>Username</td>
+                                    <td><input type="text" name="Username" value="<%= user.getUsername() %>" required /></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><input type="text" name="Email" value="<%= user.getEmail() %>" required /></td>
+                                </tr>
+                                <tr>
+                                    <td> Phone Number</td>
+                                    <td><input type="text" name="PhoneNumber" value="<%= user.getMobile_No() %>" required /></td>
+                                </tr>
+                            </table>
+                            <button type="reset">Reset</button>
+                            <button type="submit">Update</button> <br><br>
+                        </form>
+               </div>
+               </div>  
+            </div>
+         
+           <div id="form3" class="form">
+                
+               
+                    <div id="change-password-form" >
             
             <form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
             <h2>Change Password </h2>
@@ -312,8 +298,41 @@
                 <button type="submit" id="submitButton" disabled>Change Password</button>
             </form>
         </div>
-   
+    </div>
+    
+      <div id="form4" class="form">
+                <h2>Delete Account</h2>
+                <form method="post" action="DeleteProfileServlet">
+                    <button type="submit" name="deleteAccount">Delete Account</button>
+                </form>
+            </div>
+         
 </div>
+</div>
+         </div>
+    	 <script>
+        function openForm(formName, event) {
+            // Get all form elements
+            var forms = document.getElementsByClassName("form");
+            // Hide all forms
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = "none";
+            }
+            // Deactivate all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Display the selected form
+            document.getElementById(formName).style.display = "block";
+            // Activate the clicked tab
+            event.currentTarget.classList.add("active");
+        }
 
+        // Initially show the first form
+        openForm("form1", event);
+    </script>
+		
+  <script src="../js/valid.js"></script> 
   </body>
 </html>

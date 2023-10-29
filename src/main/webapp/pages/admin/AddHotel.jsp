@@ -101,12 +101,14 @@
 <title>Add Hotel</title>
 
 <link rel="stylesheet" href="../../styles/navBar.css">
+
+<!-- Include the JavaScript file for form validation -->
 <script defer src="../../js/adminValidation.js"></script>
 </head>
 
 <body class="overflow">
-
-		<%@ include file="../../includes/navBar.jsp" %>
+	<!-- Include the navigation bar -->
+	<%@ include file="../../includes/navBar.jsp"%>
 
 	<div class="content ">
 
@@ -122,25 +124,30 @@
 			</c:if>-->
 
 			<div class="form-box">
-				<form onsubmit="return AddHotelValidation();" class="form" action="addhotel" method="post">
+				<form onsubmit="return AddHotelValidation();" class="form"
+					action="addhotel" method="post">
 					<span class="title">Add Hotel</span> <span class="subtitle">Add
 						hotel to a database.</span>
 					<div class="form-container">
 
-						<input type="text" id="Hotel_id" name="Hotel_id" class="input" placeholder="Hotel Id"> 
-						<input type="text" id="Location" name="Location" class="input" placeholder="Location">
-						<input type="text" id="Contact_info" name="Contact_info" class="input" placeholder="Contact_info">
+						<input type="text" id="Hotel_id" name="Hotel_id" class="input"
+							placeholder="Hotel Id"> <input type="text" id="Location"
+							name="Location" class="input" placeholder="Location"> <input
+							type="text" id="Contact_info" name="Contact_info" class="input"
+							placeholder="Contact_info">
 					</div>
 
 					<button type="submit">Add Hotel</button>
 				</form>
+
+				<!-- Button for going back to Hotelinfo.jsp -->
 				<a href="Hotelinfo.jsp"><button class="back-btn">Back</button></a>
 			</div>
 
 		</div>
 	</div>
-	
-	
-	
+
+
+
 </body>
 </html>

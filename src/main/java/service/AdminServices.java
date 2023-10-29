@@ -14,21 +14,19 @@ import util.DBConnectionUtil;
 import util.ErrorLogger;
 
 public class AdminServices {
-	
 
+	// Get future reservations
+	public List<Booking> getReservations() throws ClassNotFoundException, SQLException {
 
-public List<Booking> getReservations() throws ClassNotFoundException, SQLException  {
-		
-		
 		Connection con = DBConnectionUtil.getDBConnection();
 		String sql = "select * from reservaton where check_in_date >= curdate();";
-		
+
 		List<Booking> res = new ArrayList<Booking>();
-		
+
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				Booking r = new Booking();
 				r.setReservaton_id(rs.getInt(1));
@@ -40,10 +38,10 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 				r.setReservation_date(rs.getDate(7));
 				r.setNo_of_Gusts(rs.getInt(8));
 				r.setAmount(rs.getFloat(9));
-				
+
 				res.add(r);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -53,21 +51,22 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 				e.printStackTrace();
 			}
 		}
-		
+
 		return res;
 	}
-	
+
+	// Get total reservation count
 	public int reservationCount() throws ClassNotFoundException, SQLException {
-		
+
 		Connection con = DBConnectionUtil.getDBConnection();
 		String sql = "select count(Reservaton_id) from reservaton";
-		
+
 		int rcount = 0;
-		
+
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			
+
 			if (rs.next()) {
 				rcount = rs.getInt(1);
 			}
@@ -80,20 +79,21 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 				e.printStackTrace();
 			}
 		}
-		
+
 		return rcount;
 	}
-	
+
+	// Get total user count
 	public int userCount() throws ClassNotFoundException, SQLException {
 		Connection con = DBConnectionUtil.getDBConnection();
 		String sql = "select count(Email) from users where role = 'user';";
-		
+
 		int ucount = 0;
-		
+
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			
+
 			if (rs.next()) {
 				ucount = rs.getInt(1);
 			}
@@ -107,12 +107,12 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 			}
 		}
 		return ucount;
-		
+
 	}
-	
+
+	// Get all user details
 	public List<User> getAllUsers() throws ClassNotFoundException, SQLException {
 
-		
 		Connection con = DBConnectionUtil.getDBConnection();
 		String sql = "select * from users ";
 
@@ -137,36 +137,38 @@ public List<Booking> getReservations() throws ClassNotFoundException, SQLExcepti
 			}
 
 		} catch (SQLException e) {
-			ErrorLogger.log.log(Level.SEVERE , "SQL Exception :: " , e);
+			ErrorLogger.log.log(Level.SEVERE, "SQL Exception :: ", e);
 		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
-				ErrorLogger.log.log(Level.SEVERE , "SQL Exception :: " , e);
+				ErrorLogger.log.log(Level.SEVERE, "SQL Exception :: ", e);
 			}
 		}
 
 		return user;
 	}
+
+	// Delete a user by User ID
 	public boolean deleteuser(int User_ID) {
-        boolean deleted = false;
+		boolean deleted = false;
 
-        try (Connection con = DBConnectionUtil.getDBConnection();
-             PreparedStatement ps = con.prepareStatement("DELETE FROM users WHERE User_id=?")) {
+		try (Connection con = DBConnectionUtil.getDBConnection();
+				PreparedStatement ps = con.prepareStatement("DELETE FROM users WHERE User_id=?")) {
 
-            ps.setInt(1, User_ID);
+			ps.setInt(1, User_ID);
 
-            int i = ps.executeUpdate();
+			int i = ps.executeUpdate();
 
-            if (i == 1) {
-                deleted = true;
-            }
+			if (i == 1) {
+				deleted = true;
+			}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-        return deleted;
-    }
+		return deleted;
+	}
 
 }
