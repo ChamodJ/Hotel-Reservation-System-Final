@@ -112,7 +112,7 @@
 	<%  
 	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
 
-	if(session.getAttribute("username") == null) {
+	if(session.getAttribute("user") == null) {
 		response.sendRedirect("../../SignIn.jsp");
 	}
 	%>
