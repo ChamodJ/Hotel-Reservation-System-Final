@@ -135,5 +135,38 @@ function setCurrentDate() {
 // Call the function to set the current date when the page loads
 setCurrentDate();
 
+function validateCheckinDate() {
+    const currentDate = new Date();
+    var checkinDateInput = document.getElementById('checkin');
+    var checkinDate = new Date(checkinDateInput.value);
+     const checkinmsg = document.getElementById('checkinerror');
+     const submit = document.getElementById('submitButton');
+
+    if (checkinDate <= currentDate) {
+		checkinmsg.textContent = "Check-in date must be greater than the current date.";
+		submit.disabled = true;
+        
+    } else {
+        checkinmsg.textContent = "";
+        submit.disabled = false;
+    }
+}
+
+function validateCheckoutDate() {
+    var checkoutDateInput = document.getElementById('checkout');
+    var checkoutDate = new Date(checkoutDateInput.value);
+    var checkinDateInput = document.getElementById('checkin');
+    var checkinDate = new Date(checkinDateInput.value);
+    const checkoutmsg = document.getElementById('checkouterror');
+    const submit = document.getElementById('submitButton');
+
+    if (checkoutDate <= checkinDate) {
+        checkoutmsg.textContent = "Check-out date must be greater than the Check-in date.";
+		submit.disabled = true;
+    } else {
+        checkoutmsg.textContent = "";
+        submit.disabled = false;
+    }
+}
 
     

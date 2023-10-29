@@ -53,6 +53,7 @@
         response.sendRedirect("loginRequiredPage.jsp"); // Redirect to the login required page
     } else {
 %>
+<div>
  <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
     
@@ -75,27 +76,28 @@
          	// Continue with the form, and populate the form fields as needed.
          %>
          
-         <br><br>
+       <br><br>
        
    <label>User ID</label>
-     <input type="text" name="userid" value="<%=user.getUser_ID() %>" readonly><br><br>
+     <input type="text" name="userid" value="<%=user.getUser_ID() %>" readonly>
     
 
         <label>Hotel</label>
-    <input type="text" name="hotelName"  value="<%= hotelName %>" readonly><br><br> <!-- Display the hotel name -->
+    <input type="text" name="hotelName"  value="<%= hotelName %>" readonly> <!-- Display the hotel name -->
     <input type="hidden" name="hotelId" value="<%= hotelId %>"> <!-- Hidden field to store the hotel ID -->
     
     <label>Room Type</label>
-<input type="text" name="roomType" id="room" value="<%= roomName %>" readonly><br><br><!-- Display the room type -->
+<input type="text" name="roomType" id="room" value="<%= roomName %>" readonly><!-- Display the room type -->
     <input type="hidden" name="roomId" id="room"  value="<%= roomId %>"> <!-- Hidden field to store the room ID -->
    
     
-    <label>Check In Date </label>
-     <input  type="date" name="checkin" ><br><br>
-        
-        
-     <label>Check Out Date </label>
-     <input  type="date" name="checkout" ><br><br>
+   <label>Check In Date</label>
+<input type="date" name="checkin" id="checkin" oninput="validateCheckinDate()" >
+ <span id="checkinerror" class="error"></span> 
+
+<label>Check Out Date</label>
+<input type="date" name="checkout" id="checkout" oninput="validateCheckoutDate()" >
+<span id="checkouterror" class="error"></span> 
      
       <label>Reservation Date</label>
     <input type="text" name="reservationDate" id="reservationDate" readonly>
@@ -113,13 +115,14 @@
 
 
 
-  <input type="submit" value="Submit">
+  <input type="submit" id="submitButton" value="Submit">
      
 
 
 
     
 </form>
+</div>
 
 <%
     }
