@@ -49,7 +49,7 @@
       <a href="Roominfo.jsp"><i class="fas fa-table"></i><span>Rooms</span></a>
       <a href="AdminReservation.jsp"><i class="fas fa-th"></i><span>Reservations</span></a>
       <a href="adminUser.jsp"><i class="fas fa-info-circle"></i><span>Users</span></a>
-      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Home</span></a>
       
     </div>
 
