@@ -767,6 +767,20 @@ img {
     width: 100%;
     height: auto;
 }
+.columns {
+    display: flex;
+    justify-content: space-around;
+    justify-items:center;
+}
+
+.column {
+    flex: 1;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 
 
   
