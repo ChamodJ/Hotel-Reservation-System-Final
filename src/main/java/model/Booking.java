@@ -43,6 +43,11 @@ public class Booking {
 		No_of_Gusts = no_of_Gusts;
 		Amount = amount;
 	}
+//if appear error 
+	public Booking(int reservaton_id2, int user_id2, int hotel_id2, String room_id2, String check_in_date2,
+			String check_out_date2, int no_of_Gusts2, float amount2) {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @return the reservaton_id
