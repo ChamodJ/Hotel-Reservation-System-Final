@@ -1,113 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <%@page import="model.User"%>
 <%@page import="model.Booking"%>
 <%@page import="service.BookingServices"%>
 <%@page import="service.BookingServiceImplementation"%>
 <%@ page import="java.util.List" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>My Bookings</title>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="styles/landingPages.css">
- <script src="js/valid.js"></script> 
+    <title>My Bookings</title>
+    <script src="js/valid.js"></script> 
+    
+    <style type="text/css">
+    	.detailtable {
+    display: flex;
+    justify-content: center;
+}
+
+.detailtable table {
+    max-width: 1100px;
+    text-align: center;
+    padding: 20px;
+}
+
+.detailtable thead tr {
+	background-color: rgb(90, 90, 117);
+	color: #ffff;
+	text-align: center;
+}
+
+.detailtable thead th {
+	padding: 12px;
+}
+
+.detailtable td {
+	padding: 12px 15px;
+	text-align: center;
+}
+
+.detailtable tbody tr {
+	border-bottom: 1px solid #e74242;
+}
+
+.detailtable tbody tr:nth-of-type(even) {
+	background-color: rgb(122, 151, 151);
+}
+
+.detailtable tbody tr:last-of-type {
+	border-bottom: 2px solid black;
+}
+
+    </style>
+    <link rel="stylesheet" href="user.css">
 </head>
 <body>
-      <header>
-    <h2 class="logo">The Scenic Ridge</h2>
-    <nav class="nav-bar">
-        <a class="links" href="Home.jsp">Home</a>
-        <a class="links" href="Hotel.jsp">Hotels</a>
-        <a class="links" href="pages/landingPages/Services.jsp">Services</a>
-        <a class="links" href="pages/landingPages/AboutUs.jsp">About Us</a>
-        <a class=" links" href="pages/landingPages/Contact.jsp">Contact</a>
-        <%
-            User user = (User) session.getAttribute("user");
-            if (user == null) {
-        %>
-        <a href="SignIn.jsp"><button class="login-btn">Log In</button></a>
-        <a href="SignUp.html"><button class="login-btn">Register</button></a>
-        <%
-            } else {
-        %>
-        <div class="user-dropdown">
-            <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
-            <div class="user-dropdown-content" id="userDropdown">
-                <a href="overview.jsp">User Profile</a>
-                <a href="SignOutServlet">Sign Out</a>
-            </div>
+    
+    <header>
+      <div class="left_area">
+        <h3><span>The Scenic Ridge</span></h3>
+      </div>
+      <div class="right_area">
+        <form action="signout">
+          <button class="logout_btn" type="submit">Logout</button>
+        </form>
+      </div>
+      
+      
+    </header>
+    
+    <div class="sidebar">
+      <div class="profile_info">
+        <h4>Welcome!</h4>
+      </div >
+
+      <div class="links">
+        <div class="links-content">
+            <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
+            <a href="pages/manage.jsp"><i class="fas fa-table"></i><span>personal Info</span></a>
+            <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
+            <a href="#"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
-        <%
-            }
-        %>
-    </nav>
-</header>
-<div class="intro">
-
-
-      <h1>Welcome, <%= user.getUsername() %>!</h1>
-
-</div>
-    
-    
-    <nav class="mainnav">
-        <ul>
-            <li><a href="overview.jsp" >Overview</a></li>
-            <li><a href="pages/manage.jsp" >Manage Account</a></li>
-            <li><a href="viewpersonalinfo.jsp">Personal Info</a></li>
-            <li><a href="mybooking.jsp" class="active">My Bookings</a></li>
-        </ul>
-    </nav>
-    
-    
-    
-    <h2>Current Bookings</h2>
-  
-<table>
-      <thead>
-          <tr>
-                                <th>Reservation ID</th>
-                                <th>Reservation Date</th>
-                                <th>Hotel Name</th>
-                                <th>Room Type</th>
-                                <th>Check In Date</th>
-                                <th>Check Out Date</th>
-                                <th>Number of Guests</th>
-                                <th>Total Price</th>
-            </tr>
-        </thead>
-        <tbody>
         
-        
-          <% 
+      </div>
+    </div>
+
+    <div class="content">
+    
+    <%
+    User user = (User) session.getAttribute("user");
+    %>
+    	<div class="detailtable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Hotel Name</th>
+                        <th>Room Type</th>
+                        <th>Check In Date</th>
+                        <th>Check Out Date</th>
+                        <th>Reservation Date</th>
+                        <th>Number of Guests</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                <% 
                 BookingServices bookingService = new BookingServiceImplementation();
                 List<Booking> currentBookings = bookingService.selectAllCurrentUserBooking(user.getUser_ID());
 
-                for (Booking booking : currentBookings) { 
-           %>
-               <tr>
-                <td><%= booking.getReservaton_id() %></td>
-                <td><%= booking.getReservation_date() %></td>
-                <td><%= booking.getHotelName() %></td>
-                <td><%= booking.getRoomType()    %></td>
-                <td><%= booking.getCheck_in_date() %></td>
-                <td><%= booking.getCheck_out_date() %></td>
-                <td><%= booking.getNo_of_Gusts() %></td>
-                <td><%= booking.getAmount() %></td>
-                 <td>
-                <a href="edit-booking.jsp?bookingId=<%= booking.getReservaton_id() %>" class="edit-button">Edit</a>
-                <a href="CancelBookingServlet?bookingId=<%= booking.getReservaton_id() %>" class="cancel-button">Cancel</a>
-            </td>
-            </tr>
-            <%
-                }
-            %>
-        </tbody>
-        </table>
-        
-    
- 
-</body>
+                for (Booking booking : currentBookings) {  
+           		%>
+
+                    <tr>
+                        <td><%= booking.getReservaton_id() %></td>
+                        <td><%= booking.getHotelName() %></td>
+                        <td><%= booking.getRoomType() %></td>
+                        <td><%= booking.getCheck_in_date() %></td>
+                        <td><%= booking.getCheck_out_date() %></td>
+                        <td><%= booking.getReservation_date() %></td>        
+             			<td><%= booking.getNo_of_Gusts()    %></td>
+                        <td><%= booking.getAmount() %></td>
+                    </tr>
+                    
+                    <%
+                		}
+                    %>
+
+                </tbody>
+            </table>
+        </div>
+		
+   
+	</div>
+
+  </body>
 </html>
