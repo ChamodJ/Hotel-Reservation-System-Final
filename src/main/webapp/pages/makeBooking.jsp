@@ -46,7 +46,7 @@
         %>
     </nav>
 </header>
- <form class="form"  action="/OHRS/AddBookingServlet" method="post">
+ <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
     
      <%

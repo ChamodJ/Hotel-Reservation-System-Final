@@ -62,7 +62,7 @@
     <table>
     <tr>
         <td>
-            <form action="/OHRS/EditPersonalInfoServlet" method="post">
+            <form action="/Hotel-Reservation-System-Final/EditPersonalInfoServlet" method="post">
                 <h2>Personal Information</h2>
                 <table>
                     <tr>

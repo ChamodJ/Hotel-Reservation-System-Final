@@ -49,7 +49,7 @@ public class QueryUtil extends CommonUtil {
 	public static String queryByID(String id) {
 	    try {
 	    	//creating a constructor of file class and parsing an XML file  
-	    	File file = new File("C:\\Users\\ASUS\\eclipse-workspace\\New folder\\OHRS\\src\\main\\webapp\\WEB-INF\\UserQuery.xml");  
+	    	File file = new File("C:\\Users\\ASUS\\Documents\\GitHub\\Hotel-Reservation-System-Final\\src\\main\\webapp\\WEB-INF\\UserQuery.xml");  
 	    	//an instance of factory that gives a document builder  
 	    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();  
 	    	//an instance of builder to parse the specified xml file  
