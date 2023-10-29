@@ -23,7 +23,11 @@
         <div class="signup-form" >
           <h1>Sign-In</h1>
 
+<<<<<<< Updated upstream
           <form action="SignIn" method="post">
+=======
+          <form action="/Hotel-Reservation-System-Final/SignIn" method="post">
+>>>>>>> Stashed changes
 
             <div class="data-field">
               <input name="email" name="email" type="email" placeholder="Enter E-mail">

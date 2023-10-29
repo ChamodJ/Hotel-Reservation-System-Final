@@ -33,7 +33,7 @@
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
                 <a href="../../overview.jsp">User Profile</a>
-                <a href="/OHRS/SignOutServlet">Sign Out</a>
+                <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
         <%

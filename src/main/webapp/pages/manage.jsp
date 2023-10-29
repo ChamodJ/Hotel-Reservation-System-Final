@@ -33,7 +33,7 @@
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
                 <a href="../overview.jsp">User Profile</a>
-                <a href="/OHRS/SignOutServlet">Sign Out</a>
+                <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
         <%
@@ -70,7 +70,7 @@
         <!-- Profile Form (Initially Hidden) -->
         <div id="profile-form" style="display: none;">
             
-            <form method="post" action="/OHRS/UpdateProfileServlet" >
+            <form method="post" action="/Hotel-Reservation-System-Final/UpdateProfileServlet" >
             
             <h2>Profile Settings</h2>
             <table>
@@ -109,7 +109,7 @@
         <!-- Change Password Form (Initially Hidden) -->
         <div id="change-password-form" style="display: none;">
             
-            <form action="/OHRS/ChangePasswordServlet" method="post">
+            <form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
             <h2>Change Password </h2>
           Current Password : 
           <input type="password" id="oldPassword" name="currentpwd" required>
