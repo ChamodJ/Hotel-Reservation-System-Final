@@ -10,7 +10,7 @@
          <script src="../../js/valid.js"></script>  
     </head>
 
-    <body class="overflow">
+    <body >
               <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">

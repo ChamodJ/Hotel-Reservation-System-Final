@@ -145,6 +145,7 @@ function validateCheckinDate() {
     if (checkinDate <= currentDate) {
 		checkinmsg.textContent = "Check-in date must be greater than the current date.";
 		submit.disabled = true;
+		
         
     } else {
         checkinmsg.textContent = "";

@@ -16,7 +16,7 @@
 
 
 </head>
-<body>
+<body class="bookNow-bg bg-img">
     <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">

@@ -105,8 +105,7 @@ public class AddBookingServlet extends HttpServlet {
 		bookingservice.insertBooking(booking);
        
 		request.setAttribute("booking", booking);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("overview.jsp");
-        dispatcher.forward(request, response);
+		response.sendRedirect("overview.jsp");
 	}
 	}
 
