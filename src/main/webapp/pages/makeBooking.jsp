@@ -54,8 +54,8 @@
     } else {
 %>
 <div class="page bookNow-main">
-
-<div class="formbook">
+        <div class="bookNow-page">
+            <div class="contactForm-div">
 	
 	 <form class="form"  action="/Hotel-Reservation-System-Final/AddBookingServlet" method="post">
 
@@ -126,7 +126,7 @@
 	    
 	</form>
 </div>
-
+</div>
 </div>
 
 <%
