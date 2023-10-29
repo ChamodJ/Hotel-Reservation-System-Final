@@ -733,6 +733,40 @@ label, input {
             background-color: #555;
         }
 
+/*service page*/
+
+h2{
+    font-size:17px;
+    font-family:Cambria;
+    text-align:center;
+
+    
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 10px; /* Adjust margin between images */
+}
+
+.half-width {
+    width: 50%;
+    margin-right: 10px; /* Adjust margin between images */
+    margin-bottom: 10px; /* Adjust margin between images */
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 
   
