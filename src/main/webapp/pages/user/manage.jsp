@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>personal Info</title>
+    <title>Personal Info</title>
   
     
     <style type="text/css">
@@ -189,8 +189,91 @@
 .tab.active {
     background-color: #ccc;
 }
+
+.tabbed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  /* Style the tabs */
+  .tabbed-tabs {
+    display: flex;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .tab.active {
+    background-color: #3498db;
+    color: white;
+  }
+
+  /* Style the tabbed-forms */
+  .tabbed-forms {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  /* Style the form content */
+  .form {
+    display: none;
+  }
+
+  /* Style the form headings */
+  .form h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #3498db;
+  }
+
+  /* Style form fields and buttons */
+  .form input[type="text"],
+  .form input[type="password"],
+  .form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+
+  .form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .form button:hover {
+    background-color: #1c87c9;
+  }
+
+  /* Style the error message */
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
     </style>
-    <link rel="stylesheet" href="../user.css">
+    <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
     
@@ -199,7 +282,7 @@
         <h3><span>The Scenic Ridge</span></h3>
       </div>
       <div class="right_area">  
-    		<a href="../SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
+    		<a href="/Hotel-Reservation-System-Final/SignOutServlet"><button class="logout_btn" type="button">Logout</button>	</a>
       </div>
       
       
@@ -212,11 +295,11 @@
 
       <div class="links">
         <div class="links-content">
-            <a href="../overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
+            <a href="overview.jsp"><i class="fas fa-cogs current"></i><span>Overview</span></a>
             <a href="manage.jsp"><i class="fas fa-table"></i><span>Manage Profile</span></a>
-            <a href="../viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
-            <a href="../mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
-            <a href="../Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
+            <a href="viewpersonalinfo.jsp"><i class="fas fa-table"></i><span>Personal Info</span></a>
+            <a href="mybooking.jsp"><i class="fas fa-info-circle"></i><span>My Bookings</span></a>
+            <a href="../landingPages/Home.jsp"><i class="fas fa-sliders-h"></i><span>Home</span></a>
         </div>
         
       </div>
@@ -232,7 +315,7 @@
             <button class="tab" onclick="openForm('form2', event)">Profile Settings</button>
             <button class="tab" onclick="openForm('form3', event)">Change Password</button>
             <button class="tab" onclick="openForm('form4', event)">Delete Account</button>
-            <!-- Add more buttons for additional forms -->
+            
         </div>
          <div class="tabbed-forms"> 
                      <div id="form1" class="form">
@@ -282,7 +365,7 @@
             <form action="/Hotel-Reservation-System-Final/ChangePasswordServlet" method="post">
             <h2>Change Password </h2>
           Current Password : 
-          <input type="password" id="oldPassword" name="currentpwd" required>
+          <input type="password" id="oldPassword" name="currentpwd" required><br>
           <a href="" >Forgot password? </a> <br> <br>
           
          New Password : 
@@ -298,12 +381,18 @@
         </div>
     </div>
     
-      <div id="form4" class="form">
-                <h2>Delete Account</h2>
-                <form method="post" action="DeleteProfileServlet">
-                    <button type="submit" name="deleteAccount">Delete Account</button>
-                </form>
-            </div>
+      
+     <div id="form4" class="form">
+    <h2>Delete Account</h2>
+    <p>Are you sure you want to delete your account?</p>
+    <button id="confirmDeleteButton" type="button" onclick="showDeleteConfirmation()">Yes</button>
+    <button id="cancelDeleteButton" type="button" onclick="cancelDelete()">No</button>
+
+    <form method="post" action="/Hotel-Reservation-System-Final/DeleteProfileServlet" id="deleteForm" style="display: none;" onsubmit="return confirmDelete();">
+        <button type="submit" name="deleteAccount">Confirm Delete</button>
+    </form>
+</div>
+
          
 </div>
 </div>
@@ -330,7 +419,20 @@
         // Initially show the first form
         openForm("form1", event);
     </script>
+    <script>
+    function showDeleteConfirmation() {
+        document.getElementById("confirmDeleteButton").style.display = "none";
+        document.getElementById("cancelDeleteButton").style.display = "none";
+        document.getElementById("deleteForm").style.display = "block";
+    }
+
+    function cancelDelete() {
+        document.getElementById("confirmDeleteButton").style.display = "inline-block";
+        document.getElementById("cancelDeleteButton").style.display = "inline-block";
+        document.getElementById("deleteForm").style.display = "none";
+    }
+</script>
 		
-  <script src="../js/valid.js"></script> 
+  <script src="../../js/valid.js"></script> 
   </body>
 </html>

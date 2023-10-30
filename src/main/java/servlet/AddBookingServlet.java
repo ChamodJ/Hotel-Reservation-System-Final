@@ -1,6 +1,6 @@
 package servlet;
 
-import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -105,7 +105,8 @@ public class AddBookingServlet extends HttpServlet {
 		bookingservice.insertBooking(booking);
        
 		request.setAttribute("booking", booking);
-		response.sendRedirect("overview.jsp");
+		
+		 response.sendRedirect(request.getContextPath() + "/pages/user/overview.jsp");
 	}
 	}
 

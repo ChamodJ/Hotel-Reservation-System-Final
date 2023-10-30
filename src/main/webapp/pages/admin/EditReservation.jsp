@@ -22,7 +22,6 @@
 
 .form-box {
 	min-width: 400px;
-	min-height: 730px;
 	background: #f1f7fe;
 	overflow: hidden;
 	border-radius: 16px;
@@ -36,9 +35,11 @@
 	padding: 32px 24px 24px;
 	gap: 30px;
 	text-align: center;
+	width: 80%; /* Set a maximum width for the form */
+	margin: 0 auto; /* Center the form horizontally */
 }
 
-/*Form text*/
+/* Form text */
 .title {
 	font-weight: bold;
 	font-size: 1.6rem;
@@ -49,28 +50,39 @@
 	color: #666;
 }
 
-/*Inputs box*/
+/* Style labels and input containers */
 .form-container {
 	overflow: hidden;
 	border-radius: 8px;
 	background-color: #fff;
-	margin: 1rem 0 .5rem;
 	width: 100%;
+	padding: 10px; /* Add some padding to the container */
+	display: flex;
+	flex-wrap: wrap; /* Wrap elements to next line when there's not enough space */
+	justify-content: space-between; /* Space between label and input */
+	margin: 1rem 0 .5rem;
 }
 
+/* Style labels */
+.form-container label {
+	font-weight: bold;
+	width: 30%; /* Set a fixed width for labels */
+	margin: 10px 0; /* Add spacing between labels */
+}
+
+/* Style input fields */
 .input {
 	background: none;
 	border: 0;
 	outline: 0;
 	height: 40px;
-	width: 100%;
+	width: 60%; /* Adjust the width of the input */
 	border-bottom: 1px solid #eee;
 	font-size: .9rem;
 	padding: 8px 15px;
-	gap: 10px;
 }
 
-/*Button*/
+/* Button */
 .form button {
 	background-color: #0066ff;
 	color: #fff;
@@ -100,8 +112,9 @@
 }
 
 .back-btn:hover {
-	background-color: #0044ab
+	background-color: #0044ab;
 }
+
 </style>
 
 <link rel="stylesheet" href="../../styles/navBar.css">
@@ -136,20 +149,29 @@
 					<span class="title">Edit Reservation</span>
 
 					<div class="form-container">
-
-						<input type="number" name="Reservaton_id" class="input"
-							value="<%=bk.getReservaton_id()%>"> <input type="number"
-							name="User_id" class="input" value="<%=bk.getUser_id()%>">
-						<input type="number" name="Hotel_id" class="input"
-							value="<%=bk.getHotel_id()%>"> <input type="text"
-							name="room_id" class="input" value="<%=bk.getRoom_id()%>">
-						<input type="date" name="check_in_date" class="input"
-							value="<%=bk.getCheck_in_date()%>"> <input type="date"
-							name="check_out_date" class="input"
-							value="<%=bk.getCheck_out_date()%>"> <input type="number"
-							name="No_of_Gusts" class="input" value="<%=bk.getNo_of_Gusts()%>">
-						<input type="number" name="Amount" class="input"
-							value="<%=bk.getAmount()%>">
+                        <label> Reservation ID</label>
+						<input type="number" name="Reservaton_id" class="input" value="<%=bk.getReservaton_id()%>" readonly >
+							
+					     <label>User ID</label>
+					    <input type="number" name="User_id" class="input" value="<%=bk.getUser_id()%>" readonly>
+					    
+					    <label>Hotel ID</label>
+						<input type="number" name="Hotel_id" class="input" value="<%=bk.getHotel_id()%>">
+						
+						<label>Room ID</label>
+						 <input type="text" name="room_id" class="input" value="<%=bk.getRoom_id()%>">
+						 
+	                   <label>Check In Date</label>
+						<input type="date" name="check_in_date" class="input" value="<%=bk.getCheck_in_date()%>">
+						
+						<label>Check Out Date</label>
+						 <input type="date" name="check_out_date" class="input"value="<%=bk.getCheck_out_date()%>" > 
+						 
+						 <label>Number of Guests</label>
+						 <input type="number" name="No_of_Gusts" class="input" value="<%=bk.getNo_of_Gusts()%>">
+						 
+						 <label>Amount</label>
+						<input type="number" name="Amount" class="input" value="<%=bk.getAmount()%>">
 
 					</div>
 

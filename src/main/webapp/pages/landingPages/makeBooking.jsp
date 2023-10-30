@@ -12,7 +12,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Make Reservation</title>
-<link rel="stylesheet" type="text/css" href="../styles/landingPages.css">
+<link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
 
 
 </head>
@@ -20,24 +20,24 @@
     <header>
     <h2 class="logo">The Scenic Ridge</h2>
     <nav class="nav-bar">
-        <a class="links" href="../Home.jsp">Home</a>
-        <a class="links" href="../Hotel.jsp">Hotels</a>
-        <a class="links" href="landingPages/Services.jsp">Services</a>
-        <a class="links" href="landingPages/AboutUs.jsp">About Us</a>
-        <a class="links" href="landingPages/Contact.jsp">Contact</a>
+        <a class="links" href="Home.jsp">Home</a>
+        <a class="links" href="Hotel.jsp">Hotels</a>
+        <a class="links" href="Services.jsp">Services</a>
+        <a class="links" href="AboutUs.jsp">About Us</a>
+        <a class="links" href="Contact.jsp">Contact</a>
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
         %>
-        <a href="../SignIn.jsp"><button class="login-btn">Log In</button></a>
-        <a href="../SignUp.html"><button class="login-btn">Register</button></a>
+        <a href="../../SignIn.jsp"><button class="login-btn">Log In</button></a>
+        <a href="../../SignUp.html"><button class="login-btn">Register</button></a>
         <%
             } else {
         %>
         <div class="user-dropdown">
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
-                <a href="../overview.jsp">User Profile</a>
+                <a href="../user/overview.jsp">User Profile</a>
                 <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
@@ -95,11 +95,11 @@
 	   
 	    
 	   <label>Check In Date</label>
-	<input type="date" name="checkin" id="checkin" oninput="validateCheckinDate()" >
+	<input type="date" name="checkin" id="checkin" oninput="validateCheckinDate()" required >
 	 <span id="checkinerror" class="error"></span> 
 	
 	<label>Check Out Date</label>
-	<input type="date" name="checkout" id="checkout" oninput="validateCheckoutDate()" >
+	<input type="date" name="checkout" id="checkout" oninput="validateCheckoutDate()" required>
 	<span id="checkouterror" class="error"></span> 
 	     
 	      <label>Reservation Date</label>
@@ -141,6 +141,6 @@
     
 </script>
 
- <script src="../js/valid.js"></script>  
+ <script src="../../js/valid.js"></script>  
 </body>
 </html>

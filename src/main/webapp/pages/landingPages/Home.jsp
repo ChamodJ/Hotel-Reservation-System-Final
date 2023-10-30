@@ -7,8 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Home</title>
 
-<link rel="stylesheet" type="text/css" href="styles/landingPages.css">
- <script src="js/valid.js"></script> 
+<link rel="stylesheet" type="text/css" href="../../styles/landingPages.css">
+ <script src="../../js/valid.js"></script> 
 </head>
 <body class="overflow bg-img welcome-bg">
       <header>
@@ -16,23 +16,23 @@
     <nav class="nav-bar">
         <a class="current  links" href="Home.jsp">Home</a>
         <a class="links" href="Hotel.jsp">Hotels</a>
-        <a class="links" href="pages/landingPages/Services.jsp">Services</a>
-        <a class="links" href="pages/landingPages/AboutUs.jsp">About Us</a>
-        <a class=" links" href="pages/landingPages/Contact.jsp">Contact</a>
+        <a class="links" href="Services.jsp">Services</a>
+        <a class="links" href="AboutUs.jsp">About Us</a>
+        <a class=" links" href="Contact.jsp">Contact</a>
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
         %>
-        <a href="SignIn.jsp"><button class="login-btn">Log In</button></a>
-        <a href="SignUp.html"><button class="login-btn">Register</button></a>
+        <a href="../../SignIn.jsp"><button class="login-btn">Log In</button></a>
+        <a href="../../SignUp.html"><button class="login-btn">Register</button></a>
         <%
             } else {
         %>
         <div class="user-dropdown">
             <button class="login-btn" onclick="toggleUserDropdown()"> <%= user.getUsername() %>  &#9660;</button>
             <div class="user-dropdown-content" id="userDropdown">
-                <a href="overview.jsp">User Profile</a>
-                <a href="SignOutServlet">Sign Out</a>
+                <a href="../user/overview.jsp">User Profile</a>
+                <a href="/Hotel-Reservation-System-Final/SignOutServlet">Sign Out</a>
             </div>
         </div>
         <%

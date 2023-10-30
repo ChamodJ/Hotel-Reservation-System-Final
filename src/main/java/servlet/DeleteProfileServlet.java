@@ -7,7 +7,7 @@ import java.io.IOException;
 import model.User;
 import service.UserServiceImplementation;
 import service.Userservices;
-import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -60,8 +60,8 @@ public class DeleteProfileServlet extends HttpServlet {
             // Invalidate the session to log the user out
             session.invalidate();
             // Redirect to a confirmation page or a sign-in page
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SignIn.jsp");
-            dispatcher.forward(request, response);
+            
+            response.sendRedirect(request.getContextPath() + "/pages/landingPages/Home.jsp");
             
         }
     }

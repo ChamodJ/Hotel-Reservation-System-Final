@@ -1,6 +1,6 @@
 package servlet;
 
-import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -40,6 +40,7 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("came to servelet");
 		//Get user inputs
 				try {
 					User ud = new User();
@@ -63,8 +64,7 @@ public class SignUpServlet extends HttpServlet {
 					    if(rawcount > 0) {
 					    	request.setAttribute("status", "Success");
 					    	
-					    	RequestDispatcher dispatcher = request.getRequestDispatcher("SignIn.jsp");
-					        dispatcher.forward(request, response);
+					    	response.sendRedirect(request.getContextPath() + "/SignIn.jsp");
 					    	//response.sendRedirect("../pages/SignUp.html");
 					    	
 					    }
@@ -77,8 +77,7 @@ public class SignUpServlet extends HttpServlet {
 					
 					else {
 						request.setAttribute("UserExist", "true");
-						RequestDispatcher dispatcher = request.getRequestDispatcher("SignUp.html");
-				        dispatcher.forward(request, response);
+				        response.sendRedirect(request.getContextPath() + "/SignUp.html");
 						
 					}
 				} catch (ClassNotFoundException | SQLException | IOException e) {

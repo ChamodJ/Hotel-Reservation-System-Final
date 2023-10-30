@@ -73,9 +73,8 @@ public class EditPersonalInfoServlet extends HttpServlet {
    		     userservice.updateUser(user);
         	
         }
-       // RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/manage.jsp");
-        //dispatcher.forward(request, response);
-        response.sendRedirect(request.getContextPath() + "/viewpersonalinfo.jsp");
+      
+        response.sendRedirect(request.getContextPath() + "/pages/user/viewpersonalinfo.jsp");
         
 	}
 
