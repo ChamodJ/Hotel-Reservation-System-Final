@@ -136,12 +136,9 @@
 
 					<div class="form-container">
 
-						<input type="number" name="Hotel_id" placeholder="Hotel Id"
-							class="input" value="<%=hotel.getHotel_id()%>"> <input
-							type="text" placeholder="Location" name="Location" class="input"
-							value="<%=hotel.getLocation()%>"> <input type="text"
-							placeholder="Contact_info" name="Contact_info" class="input"
-							value="<%=hotel.getContact_info()%>">
+						<input type="number" name="Hotel_id" placeholder="Hotel Id" required  class="input" value="<%=hotel.getHotel_id()%>">
+						<input type="text" placeholder="Location" name="Location" class="input" required value="<%=hotel.getLocation()%>"> 
+						<input type="text"placeholder="Contact_info" name="Contact_info" required  class="input"value="<%=hotel.getContact_info()%>">
 					</div>
 
 					<button type="submit">Update Hotel</button>

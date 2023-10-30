@@ -140,11 +140,9 @@
 						hotel to a database.</span>
 					<div class="form-container">
 
-						<input type="text" id="Hotel_id" name="Hotel_id" class="input"
-							placeholder="Hotel Id"> <input type="text" id="Location"
-							name="Location" class="input" placeholder="Location"> <input
-							type="text" id="Contact_info" name="Contact_info" class="input"
-							placeholder="Contact_info">
+						<input type="text" id="Hotel_id" name="Hotel_id" class="input" required  placeholder="Hotel Id"> 
+						<input type="text" id="Location" name="Location" class="input" required  placeholder="Location"> 
+						<input type="text" id="Contact_info" name="Contact_info" class="input" required  placeholder="Contact_info">
 					</div>
 
 					<button type="submit">Add Hotel</button>

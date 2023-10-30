@@ -129,18 +129,13 @@
 						room to a database.</span>
 					<div class="form-container">
 
-						<input id="Room_Id" type="text" name="Room_Id" class="input"
-							placeholder="Room Id"> <input id="Hotel_id" type="number"
-							name="Hotel_id" class="input" placeholder="Hotel Id"> <input
-							id="Type" type="text" name="Type" class="input"
-							placeholder="Room Type"> <input id="Price" type="number"
-							name="Price" class="input" placeholder="Room Price"> <input
-							id="bed_count" type="text" name="bed_count" class="input"
-							placeholder="No Of Beds"> <input id="Total_rooms"
-							type="text" name="Total_rooms" class="input"
-							placeholder="Total Rooms"> <input id="Reserved_room"
-							type="text" name="Reserved_room" class="input"
-							placeholder="Reserved Room">
+						<input id="Room_Id" type="text" name="Room_Id" class="input" required placeholder="Room Id"> 
+						<input id="Hotel_id" type="number" name="Hotel_id" class="input" required  placeholder="Hotel Id">
+						<input id="Type" type="text" name="Type" class="input" required placeholder="Room Type"> 
+						<input id="Price" type="number" name="Price" required  class="input" placeholder="Room Price"> 
+						<input id="bed_count" type="text" name="bed_count" class="input" required placeholder="No Of Beds"> 
+						<input id="Total_rooms" type="text" name="Total_rooms" class="input" required  placeholder="Total Rooms"> 
+						<input id="Reserved_room" type="text" name="Reserved_room" class="input" required  placeholder="Reserved Room">
 					</div>
 					<!-- Button for adding a room -->
 					<button type="submit">Add Room</button>

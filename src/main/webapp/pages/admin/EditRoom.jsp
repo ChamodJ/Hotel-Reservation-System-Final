@@ -133,19 +133,19 @@
 
 					<div class="form-container">
 						<input type="text" name="Room_Id" class="input"
-							placeholder="Room Id" value="<%=room.getRoom_id()%>"> <input
+							placeholder="Room Id" required value="<%=room.getRoom_id()%>"> <input
 							type="number" name="Hotel_id" class="input"
-							placeholder="Hotel Id" value="<%=room.getHotel_id()%>"> <input
+							placeholder="Hotel Id"required  value="<%=room.getHotel_id()%>"> <input
 							type="text" name="Type" class="input" placeholder="Room Type"
-							value="<%=room.getType()%>"> <input type="number"
+							required value="<%=room.getType()%>"> <input type="number"
 							name="Price" class="input" placeholder="Room Price"
-							value="<%=room.getPrice()%>"> <input type="text"
+							required value="<%=room.getPrice()%>"> <input type="text"
 							name="bed_count" class="input" placeholder="No Of Beds"
-							value="<%=room.getBed_count()%>"> <input type="text"
+							required value="<%=room.getBed_count()%>"> <input type="text"
 							name="Total_rooms" class="input" placeholder="Total Rooms"
-							value="<%=room.getTotal_rooms()%>"> <input type="text"
+							required value="<%=room.getTotal_rooms()%>"> <input type="text"
 							name="Reserved_room" class="input" placeholder="Reserved Room"
-							value="<%=room.getReserved_room()%>">
+							required value="<%=room.getReserved_room()%>">
 					</div>
 
 					<button type="submit">Update Room</button>

@@ -150,28 +150,28 @@
 
 					<div class="form-container">
                         <label> Reservation ID</label>
-						<input type="number" name="Reservaton_id" class="input" value="<%=bk.getReservaton_id()%>" readonly >
+						<input type="number" name="Reservaton_id" class="input" required value="<%=bk.getReservaton_id()%>" readonly >
 							
 					     <label>User ID</label>
-					    <input type="number" name="User_id" class="input" value="<%=bk.getUser_id()%>" readonly>
+					    <input type="number" name="User_id" class="input" required  value="<%=bk.getUser_id()%>" readonly>
 					    
 					    <label>Hotel ID</label>
-						<input type="number" name="Hotel_id" class="input" value="<%=bk.getHotel_id()%>">
+						<input type="number" name="Hotel_id" class="input" required  value="<%=bk.getHotel_id()%>">
 						
 						<label>Room ID</label>
-						 <input type="text" name="room_id" class="input" value="<%=bk.getRoom_id()%>">
+						 <input type="text" name="room_id" class="input" required  value="<%=bk.getRoom_id()%>">
 						 
 	                   <label>Check In Date</label>
-						<input type="date" name="check_in_date" class="input" value="<%=bk.getCheck_in_date()%>">
+						<input type="date" name="check_in_date" class="input" required value="<%=bk.getCheck_in_date()%>">
 						
 						<label>Check Out Date</label>
-						 <input type="date" name="check_out_date" class="input"value="<%=bk.getCheck_out_date()%>" > 
+						 <input type="date" name="check_out_date" class="input"required value="<%=bk.getCheck_out_date()%>" > 
 						 
 						 <label>Number of Guests</label>
-						 <input type="number" name="No_of_Gusts" class="input" value="<%=bk.getNo_of_Gusts()%>">
+						 <input type="number" name="No_of_Gusts" class="input" required value="<%=bk.getNo_of_Gusts()%>">
 						 
 						 <label>Amount</label>
-						<input type="number" name="Amount" class="input" value="<%=bk.getAmount()%>">
+						<input type="number" name="Amount" class="input" required value="<%=bk.getAmount()%>">
 
 					</div>
 
