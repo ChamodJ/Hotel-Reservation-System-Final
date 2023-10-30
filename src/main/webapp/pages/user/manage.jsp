@@ -381,12 +381,17 @@
         </div>
     </div>
     
-      <div id="form4" class="form">
-       <h2>Delete Account</h2>
-          <form method="post" action="/Hotel-Reservation-System-Final/DeleteProfileServlet" onsubmit="return confirmDelete();">
-           <button type="submit" name="deleteAccount">Delete Account</button>
-          </form>
-     </div>
+      
+     <div id="form4" class="form">
+    <h2>Delete Account</h2>
+    <p>Are you sure you want to delete your account?</p>
+    <button id="confirmDeleteButton" type="button" onclick="showDeleteConfirmation()">Yes</button>
+    <button id="cancelDeleteButton" type="button" onclick="cancelDelete()">No</button>
+
+    <form method="post" action="/Hotel-Reservation-System-Final/DeleteProfileServlet" id="deleteForm" style="display: none;" onsubmit="return confirmDelete();">
+        <button type="submit" name="deleteAccount">Confirm Delete</button>
+    </form>
+</div>
 
          
 </div>
@@ -414,6 +419,19 @@
         // Initially show the first form
         openForm("form1", event);
     </script>
+    <script>
+    function showDeleteConfirmation() {
+        document.getElementById("confirmDeleteButton").style.display = "none";
+        document.getElementById("cancelDeleteButton").style.display = "none";
+        document.getElementById("deleteForm").style.display = "block";
+    }
+
+    function cancelDelete() {
+        document.getElementById("confirmDeleteButton").style.display = "inline-block";
+        document.getElementById("cancelDeleteButton").style.display = "inline-block";
+        document.getElementById("deleteForm").style.display = "none";
+    }
+</script>
 		
   <script src="../../js/valid.js"></script> 
   </body>
