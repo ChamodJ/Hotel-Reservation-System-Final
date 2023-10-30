@@ -91,7 +91,7 @@ public class SignIn extends HttpServlet {
         } else {
             // If authentication fails, show an error message or redirect to the login page
         	System.out.println("none");
-        	 response.sendRedirect(request.getContextPath() + "SignIn.jsp");
+        	 response.sendRedirect(request.getContextPath() + "/SignIn.jsp");
         }
         
         
