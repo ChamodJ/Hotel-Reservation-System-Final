@@ -94,6 +94,18 @@
     <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
+
+	<%  
+	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
+	
+    User user = (User) session.getAttribute("user");
+    if (user == null) {
+    	response.sendRedirect("../../SignIn.jsp");
+    }
+    
+    else {
+	%>
+	
     
     <header>
       <div class="left_area">
@@ -125,10 +137,7 @@
 
     <div class="content">
 		<div class="welcome-div">
-				<%
-		            User user = (User) session.getAttribute("user");
-		             
-		        %>
+				
 		
 		      <h1>Welcome, <%= user.getUsername() %>!</h1>
 
@@ -196,6 +205,6 @@
 	</div>    
    
 </div>
-
+<%} %>
   </body>
 </html>

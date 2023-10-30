@@ -167,6 +167,16 @@
     <link rel="stylesheet" href="../../styles/user.css">
 </head>
 <body>
+	<%  
+	response.setHeader("cache-control","no-cache, no-store, must-revalidate");
+
+	if(session.getAttribute("user") == null) {
+		response.sendRedirect("../../SignIn.jsp");
+	}
+	
+	else {
+	%>
+	
       <header>
       <div class="left_area">
         <h3><span>The Scenic Ridge</span></h3>
@@ -227,5 +237,7 @@
 	   			</div>
     </div>
     </div>
+    
+    <%} %>
   </body>
 </html>
