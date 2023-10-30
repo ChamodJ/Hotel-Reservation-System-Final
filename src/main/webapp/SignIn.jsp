@@ -24,17 +24,17 @@
           <h1>Sign-In</h1>
 
 
-          <form action="SignIn" method="post">
+          <form onSubmit="return loginValidateForm()" action="SignIn" method="post">
 
 
 
             <div class="data-field">
-              <input name="email" name="email" type="email" placeholder="Enter E-mail">
+              <input required="" name="email" name="email" type="email" placeholder="Enter E-mail">
             </div>
 
             <div >
               <div class="data-field">
-                <input id="pass" name="password" type="password" placeholder="Enter Password">
+                <input required="" id="pass" name="password" type="password" placeholder="Enter Password">
               </div>
 
             </div>            
@@ -49,5 +49,7 @@
           </form>
 
         </div>
+        
+        <script src="js/validation.js"></script>
     </body>
 </html>

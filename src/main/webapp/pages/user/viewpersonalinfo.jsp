@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Personal Info</title>
 <title>O</title>
     <script src="../../js/valid.js"></script> 
     

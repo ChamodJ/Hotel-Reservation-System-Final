@@ -349,15 +349,15 @@
                             <table>
                                 <tr>
                                     <td>Username</td>
-                                    <td><input type="text" name="Username" value="<%= user.getUsername() %>" required /></td>
+                                    <td><input required="" type="text" name="Username" value="<%= user.getUsername() %>" required /></td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td><input type="text" name="Email" value="<%= user.getEmail() %>" required /></td>
+                                    <td><input required="" type="text" name="Email" value="<%= user.getEmail() %>" required /></td>
                                 </tr>
                                 <tr>
                                     <td> Phone Number</td>
-                                    <td><input type="text" name="PhoneNumber" value="<%= user.getMobile_No() %>" required /></td>
+                                    <td><input required="" type="text" name="PhoneNumber" value="<%= user.getMobile_No() %>" required /></td>
                                 </tr>
                             </table>
                             <button type="reset">Reset</button>

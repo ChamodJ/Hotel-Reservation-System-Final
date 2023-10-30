@@ -4,6 +4,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
  <link rel="stylesheet" href="styles/login.css">
+ 
+
 </head>
 <body>
 	
@@ -14,37 +16,36 @@
         <div class="signup-form">
           <h1>Sign Up</h1>
 
-          <form onsubmit="return registrationValidateForm()"  action="SignUpServlet" method="post">
-
+          <form onsubmit="return registrationValidateForm();" action="SignUpServlet" method="post">
             <div class="data-field">
              
-              <input name="user-name"  type="text" placeholder="Enter Name">
+              <input required="" name="user-name" id="user-name" type="text" placeholder="Enter Name">
             </div>
 
             <div class="data-field">
              
-              <input name="user-email"  type="email" placeholder="Enter E-mail">
+              <input required="" name="user-email" id="user-email" type="email" placeholder="Enter E-mail">
             </div>
 
             <div class="data-field">
               
-              <input name="user-mobile"  type="tel" placeholder="Enter Mobile">
+              <input required="" name="user-mobile" id="user-mobile" type="tel" placeholder="Enter Mobile">
             </div>
 
             <div class="data-field">
               
-              <input name="user-address"  type="text" placeholder="Enter Address">
+              <input required="" name="user-address" id="user-address" type="text" placeholder="Enter Address">
             </div>
 
             <div >
               <div class="data-field">
                
-                <input name="pass"  type="password" placeholder="Enter Password">
+                <input required="" name="pass" id="pass" type="password" placeholder="Enter Password">
               </div>
 
               <div class="data-field">
                 
-                <input name="con-pass"  type="password" placeholder="Re-enter Password">
+                <input required="" name="con-pass" id="con-pass"  type="password" placeholder="Re-enter Password">
               </div>
             </div>   
             
@@ -76,6 +77,8 @@
           </div>
 
         </div>
+
+		<script defer src="js/validation.js"></script>
 
 </body>
 </html>

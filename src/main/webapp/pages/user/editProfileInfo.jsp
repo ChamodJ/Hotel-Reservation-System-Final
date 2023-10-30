@@ -121,23 +121,23 @@
                 <table>
                     <tr>
                         <td>First Name:</td>
-                        <td><input type="text" name="newfirstname" value="<%=user.getFirst_Name() %>"></td>
+                        <td><input required="" type="text" name="newfirstname" value="<%=user.getFirst_Name() %>"></td>
                     </tr>
                     <tr>
                         <td>Last Name:</td>
-                        <td><input type="text" name="newlastname"  value="<%=user.getLast_Name() %>"></td>
+                        <td><input required="" type="text" name="newlastname"  value="<%=user.getLast_Name() %>"></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="email" name="newEmail" value="<%=user.getEmail() %>"></td>
+                        <td><input required="" type="email" name="newEmail" value="<%=user.getEmail() %>"></td>
                     </tr>
                     <tr>
                         <td>Phone Number:</td>
-                        <td><input type="tel" name="newPhoneNumber" value="<%=user.getMobile_No() %>"></td>
+                        <td><input required="" type="tel" name="newPhoneNumber" value="<%=user.getMobile_No() %>"></td>
                     </tr>
                     <tr>
                         <td>Date of Birth:</td>
-                        <td><input type="date" name="dob" value="<%=user.getDate_of_birth() %>"></td>
+                        <td><input required="" type="date" name="dob" value="<%=user.getDate_of_birth() %>"></td>
                     </tr>
                     <tr>
                         <td>Nationality:</td>
