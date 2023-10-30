@@ -189,6 +189,89 @@
 .tab.active {
     background-color: #ccc;
 }
+
+.tabbed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  /* Style the tabs */
+  .tabbed-tabs {
+    display: flex;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .tab.active {
+    background-color: #3498db;
+    color: white;
+  }
+
+  /* Style the tabbed-forms */
+  .tabbed-forms {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  /* Style the form content */
+  .form {
+    display: none;
+  }
+
+  /* Style the form headings */
+  .form h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #3498db;
+  }
+
+  /* Style form fields and buttons */
+  .form input[type="text"],
+  .form input[type="password"],
+  .form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+
+  .form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .form button:hover {
+    background-color: #1c87c9;
+  }
+
+  /* Style the error message */
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
     </style>
     <link rel="stylesheet" href="../../styles/user.css">
 </head>
